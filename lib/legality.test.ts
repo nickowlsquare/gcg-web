@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest'
 import { checkDeck } from './legality'
-import type { LegalityResult } from './legality'
 import type { Card } from '../types/card'
 
 const makeCard = (overrides: Partial<Card> = {}): Card => ({
