@@ -1,5 +1,6 @@
 import type { Card } from '../types/card'
-import { getDeckStats, validateDeck } from '../lib/deck'
+import { getDeckStats } from '../lib/deck'
+import { checkDeck } from '../lib/legality'
 import DeckStatBar from './DeckStatBar'
 import DeckList from './DeckList'
 
@@ -21,7 +22,7 @@ export default function DeckPanel({
   const mainTotal = Object.values(mainDeck).reduce((s, n) => s + n, 0)
   const resourceTotal = Object.values(resourceDeck).reduce((s, n) => s + n, 0)
   const stats = getDeckStats(mainDeck, allCards)
-  const errors = validateDeck(mainDeck, resourceDeck, allCards)
+  const { errors, warnings } = checkDeck(mainDeck, resourceDeck, allCards)
 
   return (
     <aside className="w-72 shrink-0 flex flex-col gap-3">
@@ -46,6 +47,7 @@ export default function DeckPanel({
           onAdd={onAdd}
           onRemove={onRemove}
           errors={errors}
+          warnings={warnings}
         />
       </div>
     </aside>
