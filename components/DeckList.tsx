@@ -24,7 +24,6 @@ interface DeckListProps {
 function DeckRow({
   card,
   count,
-  isResource,
   canAdd,
   onAdd,
   onRemove,

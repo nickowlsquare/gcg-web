@@ -1,0 +1,181 @@
+<h2>M1 /builder — 佈局方案</h2>
+<p class="subtitle">手動組牌頁：左邊選牌，右邊看牌組。選一個你最想要的感覺。</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="split-equal" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:linear-gradient(135deg,#1a0a2e,#2d1a0a);padding:12px;font-family:system-ui;display:flex;gap:8px;min-height:160px;">
+      <!-- Left panel: card list -->
+      <div style="flex:1;background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:8px;display:flex;flex-direction:column;gap:5px;">
+        <div style="background:#ffffff10;border-radius:4px;padding:4px 6px;font-size:9px;color:#aaa;">🔍 搜尋...</div>
+        <div style="display:flex;gap:3px;flex-wrap:wrap;">
+          <div style="background:#1a3a8f55;border-radius:3px;padding:2px 5px;font-size:8px;color:#5588ff;">Blue</div>
+          <div style="background:#ffffff10;border-radius:3px;padding:2px 5px;font-size:8px;color:#555;">Green</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px;flex:1;">
+          <div style="background:#ffffff08;border-radius:3px;padding:4px 6px;display:flex;justify-content:space-between;">
+            <span style="font-size:8px;color:#ccc;">ReZEL</span>
+            <span style="font-size:8px;color:#3b7dd8;">UNIT</span>
+          </div>
+          <div style="background:#ffffff08;border-radius:3px;padding:4px 6px;display:flex;justify-content:space-between;">
+            <span style="font-size:8px;color:#ccc;">Sinanju</span>
+            <span style="font-size:8px;color:#f0c060;">LR</span>
+          </div>
+          <div style="background:#ffffff08;border-radius:3px;padding:4px 6px;display:flex;justify-content:space-between;">
+            <span style="font-size:8px;color:#ccc;">Guntank</span>
+            <span style="font-size:8px;color:#3b7dd8;">UNIT</span>
+          </div>
+        </div>
+      </div>
+      <!-- Right panel: deck -->
+      <div style="flex:1;background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:8px;display:flex;flex-direction:column;gap:5px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:9px;color:#f0c060;">主牌組</span>
+          <span style="font-size:9px;color:#aaa;">8/50</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div style="background:#1a3a8f22;border-radius:3px;padding:3px 5px;display:flex;justify-content:space-between;">
+            <span style="font-size:8px;color:#ccc;">ReZEL</span>
+            <div style="display:flex;gap:3px;align-items:center;">
+              <span style="font-size:8px;color:#555;">−</span>
+              <span style="font-size:8px;color:#fff;">×3</span>
+              <span style="font-size:8px;color:#555;">+</span>
+            </div>
+          </div>
+          <div style="background:#f0c06015;border-radius:3px;padding:3px 5px;display:flex;justify-content:space-between;">
+            <span style="font-size:8px;color:#ccc;">Sinanju</span>
+            <div style="display:flex;gap:3px;align-items:center;">
+              <span style="font-size:8px;color:#555;">−</span>
+              <span style="font-size:8px;color:#f0c060;">×2</span>
+              <span style="font-size:8px;color:#555;">+</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:auto;">
+          <div style="font-size:8px;color:#f0c060;margin-bottom:3px;">COST CURVE</div>
+          <div style="display:flex;align-items:flex-end;gap:2px;height:20px;">
+            <div style="background:#1a3a8f;width:8px;height:6px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f;width:8px;height:14px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f;width:8px;height:20px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f;width:8px;height:12px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f44;width:8px;height:6px;border-radius:1px 1px 0 0;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — 左右對等分割</h3>
+      <p>卡片庫同牌組各佔一半。桌面體驗好，兩邊資訊同時可見。手機要上下疊。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="wide-left" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:linear-gradient(135deg,#1a0a2e,#2d1a0a);padding:12px;font-family:system-ui;display:flex;gap:8px;min-height:160px;">
+      <!-- Left: wider card list with grid -->
+      <div style="flex:2;background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:8px;display:flex;flex-direction:column;gap:5px;">
+        <div style="background:#ffffff10;border-radius:4px;padding:4px 6px;font-size:9px;color:#aaa;">🔍 搜尋卡牌...</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;flex:1;">
+          <div style="background:#ffffff0a;border-radius:3px;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            <div style="font-size:14px;">⚡</div>
+            <div style="font-size:7px;color:#ccc;text-align:center;">ReZEL</div>
+          </div>
+          <div style="background:#f0c06018;border:1px solid #f0c06044;border-radius:3px;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            <div style="font-size:14px;">⭐</div>
+            <div style="font-size:7px;color:#f0c060;text-align:center;">Sinanju</div>
+          </div>
+          <div style="background:#ffffff0a;border-radius:3px;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            <div style="font-size:14px;">🤖</div>
+            <div style="font-size:7px;color:#ccc;text-align:center;">Guntank</div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: narrow deck panel -->
+      <div style="flex:1;background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:8px;display:flex;flex-direction:column;gap:4px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span style="font-size:8px;color:#f0c060;">主 8/50</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px;flex:1;">
+          <div style="background:#1a3a8f22;border-radius:3px;padding:2px 4px;display:flex;justify-content:space-between;">
+            <span style="font-size:7px;color:#ccc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:50px;">ReZEL</span>
+            <span style="font-size:7px;color:#fff;">×3</span>
+          </div>
+          <div style="background:#f0c06015;border-radius:3px;padding:2px 4px;display:flex;justify-content:space-between;">
+            <span style="font-size:7px;color:#ccc;">Sinanju</span>
+            <span style="font-size:7px;color:#f0c060;">×2</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:7px;color:#f0c060;margin-bottom:2px;">CURVE</div>
+          <div style="display:flex;align-items:flex-end;gap:1px;height:16px;">
+            <div style="background:#1a3a8f;width:6px;height:4px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f;width:6px;height:10px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f;width:6px;height:16px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f;width:6px;height:9px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f44;width:6px;height:4px;border-radius:1px 1px 0 0;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — 左寬右窄（有卡圖）</h3>
+      <p>左邊卡片庫用網格顯示（有圖），右邊牌組清單較窄。可以直觀睇卡選卡，適合配合 M0 卡圖風格。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="bottom-stats" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:linear-gradient(135deg,#1a0a2e,#2d1a0a);padding:12px;font-family:system-ui;display:flex;flex-direction:column;gap:6px;min-height:160px;">
+      <!-- Top: two columns -->
+      <div style="display:flex;gap:8px;flex:1;">
+        <div style="flex:1;background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:6px;">
+          <div style="font-size:8px;color:#f0c060;margin-bottom:4px;">卡牌庫</div>
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <div style="background:#ffffff08;border-radius:3px;padding:3px 5px;font-size:8px;color:#ccc;">ReZEL ×1</div>
+            <div style="background:#ffffff08;border-radius:3px;padding:3px 5px;font-size:8px;color:#ccc;">Sinanju ×1</div>
+            <div style="background:#ffffff08;border-radius:3px;padding:3px 5px;font-size:8px;color:#ccc;">Guntank ×1</div>
+          </div>
+        </div>
+        <div style="flex:1;background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:6px;">
+          <div style="font-size:8px;color:#f0c060;margin-bottom:4px;">主牌 8/50</div>
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <div style="background:#1a3a8f22;border-radius:3px;padding:3px 5px;font-size:8px;color:#ccc;display:flex;justify-content:space-between;"><span>ReZEL</span><span>×3</span></div>
+            <div style="background:#f0c06015;border-radius:3px;padding:3px 5px;font-size:8px;color:#ccc;display:flex;justify-content:space-between;"><span>Sinanju</span><span style="color:#f0c060;">×2</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom: stats bar -->
+      <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:6px;display:flex;gap:10px;align-items:center;">
+        <div style="text-align:center;">
+          <div style="font-size:7px;color:#888;">UNIT</div>
+          <div style="font-size:10px;color:#3b7dd8;font-weight:bold;">5</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:7px;color:#888;">PILOT</div>
+          <div style="font-size:10px;color:#4a9f5c;font-weight:bold;">2</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:7px;color:#888;">CMD</div>
+          <div style="font-size:10px;color:#d47a2a;font-weight:bold;">1</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:7px;color:#888;">BASE</div>
+          <div style="font-size:10px;color:#7a4ab0;font-weight:bold;">0</div>
+        </div>
+        <div style="flex:1;border-left:1px solid #ffffff15;padding-left:10px;">
+          <div style="font-size:7px;color:#888;margin-bottom:2px;">COST CURVE</div>
+          <div style="display:flex;align-items:flex-end;gap:2px;height:16px;">
+            <div style="background:#1a3a8f;width:8px;height:5px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f;width:8px;height:12px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f;width:8px;height:16px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f;width:8px;height:10px;border-radius:1px 1px 0 0;"></div>
+            <div style="background:#1a3a8f44;width:8px;height:5px;border-radius:1px 1px 0 0;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — 底部統計列</h3>
+      <p>上方雙欄（卡庫 + 牌組），底部固定一條統計列（卡型比例 + cost 曲線）。統計資訊永遠可見，唔會被內容擠走。</p>
+    </div>
+  </div>
+
+</div>

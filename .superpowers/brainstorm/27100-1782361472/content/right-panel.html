@@ -1,0 +1,178 @@
+<h2>右側牌組欄——內容排列方式</h2>
+<p class="subtitle">右欄空間有限，卡型比例和 cost 曲線放哪裡？</p>
+
+<div class="split">
+
+  <div class="mockup">
+    <div class="mockup-header" onclick="toggleSelect(this.parentElement)" data-choice="stats-top" style="cursor:pointer;">A — 統計在上，清單在下 ▼ 點選</div>
+    <div class="mockup-body" style="background:linear-gradient(135deg,#1a0a2e,#2d1a0a);padding:10px;font-family:system-ui;height:320px;overflow:hidden;">
+      <div style="display:flex;flex-direction:column;gap:6px;height:100%;">
+
+        <!-- Header -->
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:#f0c060;font-size:10px;font-weight:700;">牌組</span>
+          <div style="display:flex;gap:8px;">
+            <span style="font-size:9px;color:#aaa;">主 <span style="color:#fff;font-weight:600;">8</span>/50</span>
+            <span style="font-size:9px;color:#aaa;">資源 <span style="color:#fff;font-weight:600;">3</span>/10</span>
+          </div>
+        </div>
+
+        <!-- Stats: type ratio -->
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:6px;">
+          <div style="font-size:8px;color:#f0c060;margin-bottom:4px;letter-spacing:1px;">CARD TYPES</div>
+          <div style="display:flex;gap:4px;justify-content:space-between;">
+            <div style="text-align:center;">
+              <div style="font-size:11px;color:#3b7dd8;font-weight:700;">5</div>
+              <div style="font-size:7px;color:#555;">Unit</div>
+              <div style="font-size:7px;color:#444;">25-28</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:11px;color:#4a9f5c;font-weight:700;">2</div>
+              <div style="font-size:7px;color:#555;">Pilot</div>
+              <div style="font-size:7px;color:#444;">6-8</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:11px;color:#d47a2a;font-weight:700;">1</div>
+              <div style="font-size:7px;color:#555;">Cmd</div>
+              <div style="font-size:7px;color:#444;">8-10</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:11px;color:#7a4ab0;font-weight:700;">0</div>
+              <div style="font-size:7px;color:#555;">Base</div>
+              <div style="font-size:7px;color:#444;">4-6</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats: cost curve -->
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:6px;">
+          <div style="font-size:8px;color:#f0c060;margin-bottom:4px;letter-spacing:1px;">COST CURVE</div>
+          <div style="display:flex;align-items:flex-end;gap:2px;height:28px;">
+            <div style="background:#1a3a8f;width:14px;height:8px;border-radius:2px 2px 0 0;"></div>
+            <div style="background:#1a3a8f;width:14px;height:18px;border-radius:2px 2px 0 0;"></div>
+            <div style="background:#1a3a8f;width:14px;height:28px;border-radius:2px 2px 0 0;"></div>
+            <div style="background:#1a3a8f;width:14px;height:16px;border-radius:2px 2px 0 0;"></div>
+            <div style="background:#1a3a8f55;width:14px;height:10px;border-radius:2px 2px 0 0;"></div>
+            <div style="background:#1a3a8f33;width:14px;height:6px;border-radius:2px 2px 0 0;"></div>
+            <div style="color:#555;font-size:7px;align-self:flex-end;margin-left:2px;">cost→</div>
+          </div>
+        </div>
+
+        <!-- Deck list: scrollable -->
+        <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;gap:4px;">
+          <div style="font-size:8px;color:#f0c060;letter-spacing:1px;">MAIN DECK (8/50)</div>
+          <div style="display:flex;flex-direction:column;gap:2px;overflow-y:auto;">
+            <div style="background:#1a3a8f22;border-radius:4px;padding:4px 6px;display:flex;align-items:center;gap-4:px;">
+              <span style="font-size:8px;color:#ccc;flex:1;">ReZEL</span>
+              <span style="font-size:8px;color:#3b7dd8;margin-right:4px;">UNIT</span>
+              <div style="display:flex;align-items:center;gap:3px;">
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;display:flex;align-items:center;justify-content:center;">−</button>
+                <span style="font-size:9px;color:#fff;min-width:12px;text-align:center;">3</span>
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;display:flex;align-items:center;justify-content:center;">+</button>
+              </div>
+            </div>
+            <div style="background:#f0c06015;border-radius:4px;padding:4px 6px;display:flex;align-items:center;">
+              <span style="font-size:8px;color:#ccc;flex:1;">Sinanju</span>
+              <span style="font-size:8px;color:#f0c060;margin-right:4px;">LR</span>
+              <div style="display:flex;align-items:center;gap:3px;">
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">−</button>
+                <span style="font-size:9px;color:#f0c060;min-width:12px;text-align:center;">2</span>
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">+</button>
+              </div>
+            </div>
+            <div style="background:#ffffff08;border-radius:4px;padding:4px 6px;display:flex;align-items:center;">
+              <span style="font-size:8px;color:#ccc;flex:1;">Guntank</span>
+              <span style="font-size:8px;color:#3b7dd8;margin-right:4px;">UNIT</span>
+              <div style="display:flex;align-items:center;gap:3px;">
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">−</button>
+                <span style="font-size:9px;color:#fff;min-width:12px;text-align:center;">3</span>
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header" onclick="toggleSelect(this.parentElement)" data-choice="stats-bottom" style="cursor:pointer;">B — 清單在上，統計在下 ▼ 點選</div>
+    <div class="mockup-body" style="background:linear-gradient(135deg,#1a0a2e,#2d1a0a);padding:10px;font-family:system-ui;height:320px;overflow:hidden;">
+      <div style="display:flex;flex-direction:column;gap:6px;height:100%;">
+
+        <!-- Header -->
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:#f0c060;font-size:10px;font-weight:700;">牌組</span>
+          <div style="display:flex;gap:8px;">
+            <span style="font-size:9px;color:#aaa;">主 <span style="color:#fff;font-weight:600;">8</span>/50</span>
+            <span style="font-size:9px;color:#aaa;">資源 <span style="color:#fff;font-weight:600;">3</span>/10</span>
+          </div>
+        </div>
+
+        <!-- Deck list: larger, takes most space -->
+        <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;gap:3px;">
+          <div style="font-size:8px;color:#f0c060;letter-spacing:1px;">MAIN DECK</div>
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <div style="background:#1a3a8f22;border-radius:4px;padding:4px 6px;display:flex;align-items:center;">
+              <span style="font-size:8px;color:#ccc;flex:1;">ReZEL</span>
+              <span style="font-size:8px;color:#3b7dd8;margin-right:4px;">UNIT</span>
+              <div style="display:flex;align-items:center;gap:3px;">
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">−</button>
+                <span style="font-size:9px;color:#fff;min-width:12px;text-align:center;">3</span>
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">+</button>
+              </div>
+            </div>
+            <div style="background:#f0c06015;border-radius:4px;padding:4px 6px;display:flex;align-items:center;">
+              <span style="font-size:8px;color:#ccc;flex:1;">Sinanju</span>
+              <span style="font-size:8px;color:#f0c060;margin-right:4px;">LR</span>
+              <div style="display:flex;align-items:center;gap:3px;">
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">−</button>
+                <span style="font-size:9px;color:#f0c060;min-width:12px;text-align:center;">2</span>
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">+</button>
+              </div>
+            </div>
+            <div style="background:#ffffff08;border-radius:4px;padding:4px 6px;display:flex;align-items:center;">
+              <span style="font-size:8px;color:#ccc;flex:1;">Guntank</span>
+              <span style="font-size:8px;color:#3b7dd8;margin-right:4px;">UNIT</span>
+              <div style="display:flex;align-items:center;gap:3px;">
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">−</button>
+                <span style="font-size:9px;color:#fff;min-width:12px;text-align:center;">3</span>
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">+</button>
+              </div>
+            </div>
+            <div style="font-size:8px;color:#f0c060;letter-spacing:1px;margin-top:4px;">RESOURCE (3/10)</div>
+            <div style="background:#ffffff08;border-radius:4px;padding:4px 6px;display:flex;align-items:center;">
+              <span style="font-size:8px;color:#888;flex:1;">Resource Card</span>
+              <div style="display:flex;align-items:center;gap:3px;">
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">−</button>
+                <span style="font-size:9px;color:#888;min-width:12px;text-align:center;">3</span>
+                <button style="background:#ffffff15;border:none;color:#fff;border-radius:2px;width:14px;height:14px;font-size:9px;cursor:pointer;">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats pinned to bottom -->
+        <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:6px;">
+          <div style="display:flex;gap:8px;align-items:center;">
+            <div style="display:flex;gap-6px;gap:6px;">
+              <span style="font-size:9px;"><span style="color:#3b7dd8;font-weight:700;">5</span><span style="color:#555;font-size:8px;">U</span></span>
+              <span style="font-size:9px;"><span style="color:#4a9f5c;font-weight:700;">2</span><span style="color:#555;font-size:8px;">P</span></span>
+              <span style="font-size:9px;"><span style="color:#d47a2a;font-weight:700;">1</span><span style="color:#555;font-size:8px;">C</span></span>
+              <span style="font-size:9px;"><span style="color:#7a4ab0;font-weight:700;">0</span><span style="color:#555;font-size:8px;">B</span></span>
+            </div>
+            <div style="flex:1;border-left:1px solid #ffffff15;padding-left:8px;display:flex;align-items:flex-end;gap:2px;height:18px;">
+              <div style="background:#1a3a8f;width:8px;height:6px;border-radius:1px 1px 0 0;"></div>
+              <div style="background:#1a3a8f;width:8px;height:12px;border-radius:1px 1px 0 0;"></div>
+              <div style="background:#1a3a8f;width:8px;height:18px;border-radius:1px 1px 0 0;"></div>
+              <div style="background:#1a3a8f;width:8px;height:10px;border-radius:1px 1px 0 0;"></div>
+              <div style="background:#1a3a8f44;width:8px;height:6px;border-radius:1px 1px 0 0;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

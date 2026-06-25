@@ -27,7 +27,17 @@
       "Bash(npx create-next-app@14 gcg-web --typescript --tailwind --eslint --app --src-dir=no --import-alias=\"@/*\" --no-git --yes)",
       "Bash(npx create-next-app@14 gcg-web --typescript --tailwind --eslint --app --no-src-dir --import-alias=\"@/*\" --no-git)",
       "Bash(npm install *)",
-      "Bash(npm test *)"
+      "Bash(npm test *)",
+      "Bash(node -e \"const data = require\\('./data/cards.json'\\); console.log\\('Total cards:', data.length\\); console.log\\('Card types:', data.map\\(c => c.type\\).join\\(', '\\)\\); console.log\\('LR cards:', data.filter\\(c => c.isLR\\).length\\);\")",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(npx next *)",
+      "Bash(awk '{ a[NR]=$0 } END { for \\(i=NR; i>=1; i--\\) print a[i] }')",
+      "WebFetch(domain:gundambay.com)",
+      "Skill(superpowers-requesting-code-review)",
+      "Skill(superpowers-requesting-code-review:*)",
+      "Bash(npx vitest *)",
+      "Bash(npx eslint *)"
     ]
   }
 }

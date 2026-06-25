@@ -24,7 +24,8 @@ export function removeCard(
   const current = deck[cardId]
   if (current === undefined) return deck
   if (current <= 1) {
-    const { [cardId]: _, ...rest } = deck
+    const rest = { ...deck }
+    delete rest[cardId]
     return rest
   }
   return { ...deck, [cardId]: current - 1 }
