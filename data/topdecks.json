@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Blue Aggro",
+    "colors": ["blue"],
+    "strategy": "aggro",
+    "keyCards": ["GD01-018", "GD01-008"],
+    "list": [
+      { "id": "GD01-018", "count": 4 },
+      { "id": "GD01-008", "count": 4 },
+      { "id": "GD01-102", "count": 4 }
+    ],
+    "source": "sample",
+    "date": "2026-06-01"
+  },
+  {
+    "name": "Red Aggro",
+    "colors": ["red"],
+    "strategy": "aggro",
+    "keyCards": ["ST03-001", "GD03-092"],
+    "list": [
+      { "id": "ST03-001", "count": 4 },
+      { "id": "GD03-092", "count": 4 },
+      { "id": "GD01-094", "count": 4 }
+    ],
+    "source": "sample",
+    "date": "2026-06-01"
+  },
+  {
+    "name": "Blue Control",
+    "colors": ["blue"],
+    "strategy": "control",
+    "keyCards": ["GD01-102"],
+    "list": [
+      { "id": "GD01-102", "count": 4 },
+      { "id": "GD01-008", "count": 4 }
+    ],
+    "source": "sample",
+    "date": "2026-06-01"
+  },
+  {
+    "name": "White Attrition",
+    "colors": ["white"],
+    "strategy": "attrition",
+    "keyCards": ["ST01-014", "ST01-016"],
+    "list": [
+      { "id": "ST01-007", "count": 4 },
+      { "id": "ST01-011", "count": 4 },
+      { "id": "ST01-014", "count": 4 },
+      { "id": "ST01-016", "count": 4 }
+    ],
+    "source": "sample",
+    "date": "2026-06-01"
+  },
+  {
+    "name": "Blue-Green Midrange",
+    "colors": ["blue", "green"],
+    "strategy": "midrange",
+    "keyCards": ["GD01-018", "ST03-006"],
+    "list": [
+      { "id": "GD01-018", "count": 4 },
+      { "id": "ST03-006", "count": 4 },
+      { "id": "ST02-015", "count": 4 }
+    ],
+    "source": "sample",
+    "date": "2026-06-01"
+  }
+]
