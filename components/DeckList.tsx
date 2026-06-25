@@ -19,6 +19,7 @@ interface DeckListProps {
   onAdd: (card: Card, isResource: boolean) => void
   onRemove: (cardId: string, isResource: boolean) => void
   errors: string[]
+  warnings: string[]
 }
 
 function DeckRow({
@@ -78,6 +79,7 @@ export default function DeckList({
   onAdd,
   onRemove,
   errors,
+  warnings,
 }: DeckListProps) {
   const cardMap = new Map(allCards.map(c => [c.id, c]))
 
@@ -148,6 +150,15 @@ export default function DeckList({
         <div className="rounded border border-red-500/30 bg-red-500/10 px-3 py-2 space-y-1">
           {errors.map((err, i) => (
             <p key={i} className="text-[10px] text-red-400">{err}</p>
+          ))}
+        </div>
+      )}
+
+      {/* Warnings */}
+      {warnings.length > 0 && (
+        <div className="rounded border border-amber-500/30 bg-amber-500/10 px-3 py-2 space-y-1">
+          {warnings.map((warn, i) => (
+            <p key={i} className="text-[10px] text-amber-400">{warn}</p>
           ))}
         </div>
       )}
