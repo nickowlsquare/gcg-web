@@ -12,7 +12,7 @@ export interface StrategyWeights {
 export const STRATEGY_WEIGHTS: Record<Strategy, StrategyWeights> = {
   aggro: {
     costBonus: (cost) =>
-      cost === null ? 0 : cost <= 2 ? 3 : cost <= 4 ? 0 : 0,
+      cost === null ? 0 : cost <= 2 ? 3 : 0,
     apWeight: 0.5,
     hpWeight: 0.1,
     typeBonus: { unit: 2, pilot: 1, command: 0, base: 0, resource: 0 },

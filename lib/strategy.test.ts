@@ -39,6 +39,14 @@ describe('scoreCard — cost preference', () => {
     )
   })
 
+  it('Aggro: mid-cost card (cost 4) scores same as high-cost card (cost 6), both get 0 bonus', () => {
+    const midCost = makeCard({ id: 'MID', cost: 4, ap: 3, hp: 3 })
+    const highCost = makeCard({ id: 'HIGH2', cost: 6, ap: 3, hp: 3 })
+    expect(scoreCard(midCost, 'aggro', emptyFreq)).toBe(
+      scoreCard(highCost, 'aggro', emptyFreq)
+    )
+  })
+
   it('Control: high-cost card (cost 6) scores higher than low-cost card (cost 2), same stats', () => {
     const lowCost = makeCard({ id: 'LOW', cost: 2, ap: 3, hp: 3 })
     const highCost = makeCard({ id: 'HIGH', cost: 6, ap: 3, hp: 3 })
