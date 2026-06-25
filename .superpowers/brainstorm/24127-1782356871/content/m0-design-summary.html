@@ -1,0 +1,145 @@
+<h2>M0 設計總結 — 確認方案</h2>
+<p class="subtitle">已決定：視覺 C（深紫黑金）+ 資料 A（deckplanet API）+ 佈局 B（左側篩選欄）</p>
+
+<div class="section">
+  <h3>📁 專案結構</h3>
+  <div style="background:#1a1a2e;border:1px solid #ffffff15;border-radius:8px;padding:16px;font-family:monospace;font-size:12px;color:#ccc;line-height:1.8;">
+    <span style="color:#f0c060;">GCG Web/</span><br>
+    ├── <span style="color:#88aaff;">app/</span><br>
+    │&nbsp;&nbsp; ├── layout.tsx &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#555;">← 全局深紫黑背景</span><br>
+    │&nbsp;&nbsp; ├── page.tsx &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#555;">← 首頁（暫 redirect /cards）</span><br>
+    │&nbsp;&nbsp; └── <span style="color:#88aaff;">cards/</span><br>
+    │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── page.tsx &nbsp;<span style="color:#555;">← 卡片瀏覽頁</span><br>
+    ├── <span style="color:#88aaff;">components/</span><br>
+    │&nbsp;&nbsp; ├── CardGrid.tsx &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#555;">← 卡片網格</span><br>
+    │&nbsp;&nbsp; ├── CardTile.tsx &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#555;">← 單張卡片</span><br>
+    │&nbsp;&nbsp; └── FilterSidebar.tsx <span style="color:#555;">← 左側篩選欄</span><br>
+    ├── <span style="color:#88aaff;">lib/</span><br>
+    │&nbsp;&nbsp; └── cards.ts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#555;">← 讀 JSON + 篩選（純函式）</span><br>
+    ├── <span style="color:#88aaff;">types/</span><br>
+    │&nbsp;&nbsp; └── card.ts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#555;">← 型別定義</span><br>
+    └── <span style="color:#88aaff;">data/</span><br>
+    &nbsp;&nbsp;&nbsp; └── cards.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#555;">← 12 張真實卡牌</span>
+  </div>
+</div>
+
+<div class="section">
+  <h3>🃏 型別更新（vs 計劃書）</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div style="background:#2a1a0a;border:1px solid #f0c06033;border-radius:8px;padding:12px;">
+      <div style="color:#f0c060;font-size:11px;font-weight:700;margin-bottom:8px;">新增 CardColor</div>
+      <code style="color:#aaa;font-size:11px;">"blue" | "green" | "red"<br>| "white" | <span style="color:#a060f0;">"purple"</span></code>
+      <div style="color:#666;font-size:10px;margin-top:6px;">官網有紫色，原計劃書冇</div>
+    </div>
+    <div style="background:#2a1a0a;border:1px solid #f0c06033;border-radius:8px;padding:12px;">
+      <div style="color:#f0c060;font-size:11px;font-weight:700;margin-bottom:8px;">Pilot 新增欄位</div>
+      <code style="color:#aaa;font-size:11px;">apBoost?: number<br>hpBoost?: number<br>linkRequirement?: string<br>blockIcon?: number<br>zones?: string[]</code>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>📦 12 張樣本卡組成</h3>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <div style="background:#1a3a8f33;border:1px solid #1a3a8f;border-radius:6px;padding:8px 14px;text-align:center;">
+      <div style="color:#5588ff;font-size:18px;font-weight:700;">5</div>
+      <div style="color:#aaa;font-size:10px;">UNIT</div>
+      <div style="color:#f0c060;font-size:9px;">含 2×LR</div>
+    </div>
+    <div style="background:#2a5f2a33;border:1px solid #2a5f2a;border-radius:6px;padding:8px 14px;text-align:center;">
+      <div style="color:#66cc66;font-size:18px;font-weight:700;">3</div>
+      <div style="color:#aaa;font-size:10px;">PILOT</div>
+      <div style="color:#666;font-size:9px;">含 Link 示例</div>
+    </div>
+    <div style="background:#7a3a0a33;border:1px solid #7a3a0a;border-radius:6px;padding:8px 14px;text-align:center;">
+      <div style="color:#d47a2a;font-size:18px;font-weight:700;">2</div>
+      <div style="color:#aaa;font-size:10px;">COMMAND</div>
+    </div>
+    <div style="background:#4a1a6a33;border:1px solid #4a1a6a;border-radius:6px;padding:8px 14px;text-align:center;">
+      <div style="color:#aa66cc;font-size:18px;font-weight:700;">2</div>
+      <div style="color:#aaa;font-size:10px;">BASE</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>🎨 卡型顏色語意（全站統一）</h3>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:6px;background:#ffffff08;border-radius:6px;padding:6px 12px;">
+      <div style="width:10px;height:10px;background:#3b7dd8;border-radius:2px;"></div>
+      <span style="color:#fff;font-size:12px;">Unit</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;background:#ffffff08;border-radius:6px;padding:6px 12px;">
+      <div style="width:10px;height:10px;background:#4a9f5c;border-radius:2px;"></div>
+      <span style="color:#fff;font-size:12px;">Pilot</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;background:#ffffff08;border-radius:6px;padding:6px 12px;">
+      <div style="width:10px;height:10px;background:#d47a2a;border-radius:2px;"></div>
+      <span style="color:#fff;font-size:12px;">Command</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;background:#ffffff08;border-radius:6px;padding:6px 12px;">
+      <div style="width:10px;height:10px;background:#7a4ab0;border-radius:2px;"></div>
+      <span style="color:#fff;font-size:12px;">Base</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>📱 /cards 佈局（B 方案）</h3>
+  <div style="background:linear-gradient(135deg,#1a0a2e,#2d1a0a);border-radius:8px;padding:14px;display:flex;gap:10px;">
+    <!-- Sidebar -->
+    <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:6px;padding:10px;min-width:80px;">
+      <div style="color:#f0c060;font-size:9px;letter-spacing:1px;margin-bottom:6px;">COLOR</div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:10px;">
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#1a3a8f;border-radius:2px;"></div><span style="color:#fff;font-size:9px;">Blue</span></div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#2a5f2a;border-radius:2px;"></div><span style="color:#888;font-size:9px;">Green</span></div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#8f1a1a;border-radius:2px;"></div><span style="color:#888;font-size:9px;">Red</span></div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#888;border-radius:2px;"></div><span style="color:#888;font-size:9px;">White</span></div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#6a3a9f;border-radius:2px;"></div><span style="color:#888;font-size:9px;">Purple</span></div>
+      </div>
+      <div style="color:#f0c060;font-size:9px;letter-spacing:1px;margin-bottom:6px;">TYPE</div>
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#3b7dd8;border-radius:2px;"></div><span style="color:#fff;font-size:9px;">Unit</span></div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#4a9f5c;border-radius:2px;"></div><span style="color:#888;font-size:9px;">Pilot</span></div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#d47a2a;border-radius:2px;"></div><span style="color:#888;font-size:9px;">Command</span></div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#7a4ab0;border-radius:2px;"></div><span style="color:#888;font-size:9px;">Base</span></div>
+      </div>
+    </div>
+    <!-- Grid -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;flex:1;">
+      <div style="background:#ffffff08;border:1px solid #f0c06055;border-radius:5px;padding:6px;text-align:center;">
+        <div style="background:#1a3a8f44;border-radius:3px;height:36px;margin-bottom:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">⭐</div>
+        <div style="color:#f0c060;font-size:8px;font-weight:600;">Wing Zero</div>
+        <div style="color:#3b7dd8;font-size:7px;">UNIT · LR</div>
+      </div>
+      <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:5px;padding:6px;text-align:center;">
+        <div style="background:#1a3a8f33;border-radius:3px;height:36px;margin-bottom:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">🤖</div>
+        <div style="color:#fff;font-size:8px;font-weight:600;">Barbatos</div>
+        <div style="color:#3b7dd8;font-size:7px;">UNIT · L4</div>
+      </div>
+      <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:5px;padding:6px;text-align:center;">
+        <div style="background:#2a5f2a33;border-radius:3px;height:36px;margin-bottom:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">👤</div>
+        <div style="color:#fff;font-size:8px;font-weight:600;">Mikazuki</div>
+        <div style="color:#4a9f5c;font-size:7px;">PILOT · L3</div>
+      </div>
+      <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:5px;padding:6px;text-align:center;">
+        <div style="background:#7a3a0a33;border-radius:3px;height:36px;margin-bottom:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">📋</div>
+        <div style="color:#fff;font-size:8px;font-weight:600;">Assault</div>
+        <div style="color:#d47a2a;font-size:7px;">CMD · L2</div>
+      </div>
+      <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:5px;padding:6px;text-align:center;">
+        <div style="background:#4a1a6a33;border-radius:3px;height:36px;margin-bottom:4px;display:flex;align-items:center;justify-content:center;font-size:16px;">🏰</div>
+        <div style="color:#fff;font-size:8px;font-weight:600;">Calamity</div>
+        <div style="color:#7a4ab0;font-size:7px;">BASE · L3</div>
+      </div>
+      <div style="background:#ffffff05;border:1px dashed #ffffff15;border-radius:5px;padding:6px;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#444;font-size:10px;">+7 more</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:#0a2a0a;border:1px solid #2a6a2a;border-radius:8px;padding:14px;margin-top:8px;">
+  <div style="color:#66cc66;font-size:12px;font-weight:600;margin-bottom:4px;">✓ 呢個方案你 OK 嗎？</div>
+  <div style="color:#aaa;font-size:11px;">如果 OK 我就寫設計文件，然後開始落實計劃。如果有想改的地方請話我知。</div>
+</div>

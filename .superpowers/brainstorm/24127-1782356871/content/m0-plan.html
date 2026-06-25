@@ -1,0 +1,108 @@
+<h2>M0 執行計劃 — 13 個任務</h2>
+<p class="subtitle">docs/superpowers/plans/2026-06-25-m0-implementation.md · 已 commit</p>
+
+<div class="section">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+
+    <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:8px;padding:12px;">
+      <div style="color:#f0c060;font-size:10px;letter-spacing:1px;margin-bottom:8px;">⚙ 基礎設置</div>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 1 — 初始化 Next.js 14 專案 + Vitest</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 2 — Tailwind 顏色 Token + globals.css</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 3 — types/card.ts 型別定義</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 4 — data/cards.json (12 張真實卡)</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:8px;padding:12px;">
+      <div style="color:#f0c060;font-size:10px;letter-spacing:1px;margin-bottom:8px;">🧪 邏輯層 (TDD)</div>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 5 — lib/cards.ts + 7 個 Vitest 測試</span>
+        </div>
+        <div style="background:#2a5f2a22;border:1px solid #4a9f5c33;border-radius:4px;padding:6px;margin-top:4px;">
+          <div style="color:#4a9f5c;font-size:9px;margin-bottom:3px;">TDD 流程</div>
+          <div style="color:#888;font-size:9px;">寫失敗測試 → 驗證失敗 → 實現代碼 → 通過</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:8px;padding:12px;">
+      <div style="color:#f0c060;font-size:10px;letter-spacing:1px;margin-bottom:8px;">🎨 UI 組件</div>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 6 — Navbar（金色 Logo + 導航）</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 7 — CardTile（卡片、LR 徽章、色標）</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 8 — CardGrid（響應式網格）</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 9 — FilterSidebar（顏色＋卡型篩選）</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#ffffff08;border:1px solid #ffffff15;border-radius:8px;padding:12px;">
+      <div style="color:#f0c060;font-size:10px;letter-spacing:1px;margin-bottom:8px;">🚀 頁面 + 驗收</div>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 10 — app/layout.tsx（Root Layout）</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 11 — app/page.tsx（redirect /cards）</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 12 — app/cards/page.tsx（主頁面）</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="color:#4a9f5c;font-size:10px;">□</span>
+          <span style="color:#ccc;font-size:11px;">Task 13 — Build 驗證 + 瀏覽器 Smoke Test</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h3>執行方式</h3>
+  <div class="options">
+    <div class="option" data-choice="subagent" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>Subagent 驅動（推薦）</h3>
+        <p>每個 Task 派一個全新 subagent 執行，完成後我審查再繼續下一個。速度快，錯誤早發現。</p>
+      </div>
+    </div>
+    <div class="option" data-choice="inline" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>當前 Session 執行</h3>
+        <p>我在這個對話直接一步步執行，每個 checkpoint 讓你確認。適合想全程跟進的情況。</p>
+      </div>
+    </div>
+  </div>
+</div>
