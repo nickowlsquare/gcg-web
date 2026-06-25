@@ -1,0 +1,60 @@
+// types/card.ts
+export type CardColor = 'blue' | 'green' | 'red' | 'white' | 'purple'
+export type CardType = 'unit' | 'pilot' | 'command' | 'base' | 'resource'
+export type Strategy = 'aggro' | 'midrange' | 'control' | 'attrition'
+
+export interface Card {
+  // Identifiers
+  id: string           // e.g. "GD01-015"
+  name: string
+  type: CardType
+  rarity: string       // "C" | "U" | "R" | "LR" | "P"
+  set: string          // e.g. "GD01"
+  sourceTitle?: string // e.g. "Mobile Suit Gundam SEED"
+
+  // Game stats
+  colors: CardColor[]  // 1+ colors; colorless = []
+  level: number | null
+  cost: number | null
+  ap?: number          // Unit / Base attack power
+  hp?: number          // Unit / Base hit points
+  isLR?: boolean
+
+  // Pilot-specific fields
+  apBoost?: number
+  hpBoost?: number
+  linkRequirement?: string
+  blockIcon?: number
+
+  // Classification & effects
+  traits: string[]     // e.g. ["Earth Alliance"]
+  keywords: string[]   // e.g. ["Deploy", "Burst"]
+  zones?: string[]     // e.g. ["Space", "Earth"]
+  text: string
+
+  // Legality
+  isBanned?: boolean
+  isLimited?: boolean
+}
+
+export interface DeckEntry {
+  id: string
+  count: number
+}
+
+export interface Deck {
+  colors: CardColor[]   // max 2
+  main: DeckEntry[]     // total = 50
+  resource: DeckEntry[] // total = 10
+}
+
+export interface TopDeck {
+  name: string
+  colors: CardColor[]
+  keyCards: string[]
+  strategy: Strategy
+  list?: DeckEntry[]
+  source: string
+  date: string
+  placement?: number
+}
