@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { filterCards, getAllCards } from './cards'
-import type { Card, CardColor, CardType } from '../types/card'
+import { filterCards } from './cards'
+import type { Card } from '../types/card'
 
 const mockCards: Card[] = [
   {
