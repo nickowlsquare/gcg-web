@@ -3,9 +3,12 @@ import CardTile from './CardTile'
 
 interface CardGridProps {
   cards: Card[]
+  deckCounts?: Record<string, number>
+  onAdd?: (card: Card) => void
+  canAdd?: (card: Card) => boolean
 }
 
-export default function CardGrid({ cards }: CardGridProps) {
+export default function CardGrid({ cards, deckCounts, onAdd, canAdd }: CardGridProps) {
   if (cards.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-24 text-center">
@@ -17,9 +20,15 @@ export default function CardGrid({ cards }: CardGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
       {cards.map(card => (
-        <CardTile key={card.id} card={card} />
+        <CardTile
+          key={card.id}
+          card={card}
+          deckCount={deckCounts?.[card.id] ?? 0}
+          onAdd={onAdd ? () => onAdd(card) : undefined}
+          canAdd={canAdd ? canAdd(card) : true}
+        />
       ))}
     </div>
   )
