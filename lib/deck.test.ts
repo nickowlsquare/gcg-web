@@ -160,13 +160,17 @@ describe('validateDeck', () => {
     const mainDeck: Record<string, number> = {}
     for (let i = 0; i < 13; i++) mainDeck[`C${i}`] = 4
     const errors = validateDeck(mainDeck, {}, [])
-    expect(errors.some(e => e.includes('主牌組'))).toBe(true)
+    const mainError = errors.find(e => e.includes('主牌組'))
+    expect(mainError).toBeDefined()
+    expect(mainError).toMatch(/52/) // 13 * 4 = 52
   })
 
   it('reports error when resource deck exceeds 10', () => {
     const resourceDeck = { 'R1': 4, 'R2': 4, 'R3': 3 } // 11
     const errors = validateDeck({}, resourceDeck, [])
-    expect(errors.some(e => e.includes('資源'))).toBe(true)
+    const resError = errors.find(e => e.includes('資源'))
+    expect(resError).toBeDefined()
+    expect(resError).toMatch(/11/) // 4+4+3 = 11
   })
 
   it('reports warning when deck has more than 2 colors', () => {
