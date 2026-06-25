@@ -7,7 +7,7 @@ export interface LegalityResult {
   warnings: string[]
 }
 
-const COLOR_LABELS: Record<string, string> = {
+const COLOR_LABELS: Record<CardColor, string> = {
   blue: 'Blue', green: 'Green', red: 'Red', white: 'White', purple: 'Purple',
 }
 
@@ -75,6 +75,8 @@ export function checkDeck(
       }
     }
   }
+
+  // TODO: banned/limited card checking deferred to a later milestone
 
   return { isLegal: errors.length === 0, errors, warnings }
 }

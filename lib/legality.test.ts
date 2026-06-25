@@ -80,7 +80,7 @@ describe('checkDeck — isLegal', () => {
     const res = makeLegalResource()
     const allCards = [...main.cards, ...res.cards]
     const result = checkDeck(main.deck, res.deck, allCards)
-    expect(result.isLegal).toBe(result.errors.length === 0)
+    expect(result.isLegal).toBe(true)
   })
 })
 
@@ -257,8 +257,9 @@ describe('checkDeck — type ratio warnings', () => {
     modCards.push(makeCard({ id: 'EXTRA', type: 'unit' }))
     const allCards = [...modCards, ...res.cards]
     const result = checkDeck(modDeck, res.deck, allCards)
+    // Should have warnings (29 units) but be legal (deck counts are correct, colors are fine)
     expect(result.warnings.some(w => w.includes('Unit'))).toBe(true)
-    expect(result.isLegal).toBe(result.errors.length === 0)
+    expect(result.isLegal).toBe(true)
   })
 
   it('warnings come from main deck only, not resource deck', () => {
