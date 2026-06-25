@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { addCard, removeCard, getDeckStats, getDeckColors, validateDeck } from './deck'
+import { addCard, removeCard, getDeckStats, getDeckColors } from './deck'
 import type { Card } from '../types/card'
 
 const makeCard = (overrides: Partial<Card> = {}): Card => ({
@@ -146,41 +146,5 @@ describe('getDeckColors', () => {
 
   it('returns empty array for empty deck', () => {
     expect(getDeckColors({}, [])).toEqual([])
-  })
-})
-
-// validateDeck
-describe('validateDeck', () => {
-  it('returns empty array for a valid deck', () => {
-    const errors = validateDeck({}, {}, [])
-    expect(errors).toEqual([])
-  })
-
-  it('reports error when main deck exceeds 50', () => {
-    const mainDeck: Record<string, number> = {}
-    for (let i = 0; i < 13; i++) mainDeck[`C${i}`] = 4
-    const errors = validateDeck(mainDeck, {}, [])
-    const mainError = errors.find(e => e.includes('主牌組'))
-    expect(mainError).toBeDefined()
-    expect(mainError).toMatch(/52/) // 13 * 4 = 52
-  })
-
-  it('reports error when resource deck exceeds 10', () => {
-    const resourceDeck = { 'R1': 4, 'R2': 4, 'R3': 3 } // 11
-    const errors = validateDeck({}, resourceDeck, [])
-    const resError = errors.find(e => e.includes('資源'))
-    expect(resError).toBeDefined()
-    expect(resError).toMatch(/11/) // 4+4+3 = 11
-  })
-
-  it('reports warning when deck has more than 2 colors', () => {
-    const cards = [
-      makeCard({ id: 'B', colors: ['blue'] }),
-      makeCard({ id: 'G', colors: ['green'] }),
-      makeCard({ id: 'R', colors: ['red'] }),
-    ]
-    const mainDeck = { 'B': 1, 'G': 1, 'R': 1 }
-    const errors = validateDeck(mainDeck, {}, cards)
-    expect(errors.some(e => e.includes('顏色'))).toBe(true)
   })
 })

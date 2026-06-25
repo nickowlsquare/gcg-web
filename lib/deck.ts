@@ -66,30 +66,3 @@ export function getDeckColors(
   return Array.from(colorSet)
 }
 
-export function validateDeck(
-  mainDeck: Record<string, number>,
-  resourceDeck: Record<string, number>,
-  allCards: Card[]
-): string[] {
-  const errors: string[] = []
-  const mainTotal = totalCount(mainDeck)
-  const resourceTotal = totalCount(resourceDeck)
-
-  if (mainTotal > 50) {
-    errors.push(`主牌組超過 50 張（目前 ${mainTotal} 張）`)
-  }
-  if (resourceTotal > 10) {
-    errors.push(`資源牌組超過 10 張（目前 ${resourceTotal} 張）`)
-  }
-
-  const allDeck = { ...mainDeck, ...resourceDeck }
-  const colors = getDeckColors(allDeck, allCards)
-  if (colors.length > 2) {
-    const colorLabels: Record<string, string> = {
-      blue: 'Blue', green: 'Green', red: 'Red', white: 'White', purple: 'Purple',
-    }
-    errors.push(`超過 2 種顏色（目前：${colors.map(c => colorLabels[c] ?? c).join('、')}）`)
-  }
-
-  return errors
-}
