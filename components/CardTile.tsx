@@ -25,12 +25,20 @@ function getCardImageUrl(id: string): string {
 
 interface CardTileProps {
   card: Card
+  deckCount?: number
+  onAdd?: () => void
+  canAdd?: boolean
 }
 
-export default function CardTile({ card }: CardTileProps) {
+export default function CardTile({ card, deckCount, onAdd, canAdd = true }: CardTileProps) {
   const [imgError, setImgError] = useState(false)
   const typeStyle = CARD_TYPE_COLORS[card.type] ?? CARD_TYPE_COLORS.resource
   const isLR = card.isLR === true
+
+  const handleAddClick = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    onAdd?.()
+  }
 
   return (
     <div
@@ -41,6 +49,13 @@ export default function CardTile({ card }: CardTileProps) {
         ${isLR ? 'border-accent-gold/50' : 'border-white/10'}
       `}
     >
+      {/* Deck count badge */}
+      {deckCount && deckCount > 0 && (
+        <span className="absolute top-2 left-2 z-10 rounded-full bg-accent-gold/90 px-1.5 py-0.5 text-[9px] font-bold text-bg-base leading-none shadow">
+          ×{deckCount}
+        </span>
+      )}
+
       {/* LR badge */}
       {isLR && (
         <span className="absolute top-2 right-2 z-10 rounded-full bg-accent-gold px-1.5 py-0.5 text-[9px] font-bold text-bg-base leading-none shadow">
@@ -49,7 +64,7 @@ export default function CardTile({ card }: CardTileProps) {
       )}
 
       {/* Card image */}
-      <div className="relative w-full aspect-[5/7] bg-bg-elevated overflow-hidden">
+      <div className={`relative w-full aspect-[5/7] bg-bg-elevated overflow-hidden ${onAdd ? 'group' : ''}`}>
         {!imgError ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -65,6 +80,28 @@ export default function CardTile({ card }: CardTileProps) {
               {card.type}
             </span>
             <p className="text-[10px] text-white/40 text-center leading-tight mt-1">{card.name}</p>
+          </div>
+        )}
+
+        {/* Hover overlay with add button */}
+        {onAdd && (
+          <div className="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-150 group-hover:opacity-100 flex items-center justify-center">
+            <button
+              type="button"
+              disabled={!canAdd}
+              onClick={handleAddClick}
+              className={`
+                w-12 h-12 rounded-full font-bold text-lg transition-all
+                flex items-center justify-center
+                ${
+                  canAdd
+                    ? 'bg-accent-gold text-bg-base hover:scale-110 active:scale-95 cursor-pointer'
+                    : 'bg-white/20 text-white/40 cursor-not-allowed'
+                }
+              `}
+            >
+              +
+            </button>
           </div>
         )}
       </div>
