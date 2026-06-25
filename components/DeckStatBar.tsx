@@ -56,10 +56,12 @@ export default function DeckStatBar({ stats }: DeckStatBarProps) {
             const heightPct = maxCount > 0 ? (count / maxCount) * 100 : 0
             return (
               <div key={cost} className="flex flex-col items-center gap-0.5 flex-1">
-                <div
-                  className="w-full rounded-t bg-game-blue/60 transition-all duration-300 min-h-[2px]"
-                  style={{ height: `${Math.max(heightPct, 4)}%` }}
-                />
+                {count > 0 && (
+                  <div
+                    className="w-full rounded-t bg-game-blue/60 transition-all duration-300"
+                    style={{ height: `${heightPct}%` }}
+                  />
+                )}
                 <span className="text-[8px] text-white/30">{cost}</span>
               </div>
             )

@@ -30,7 +30,6 @@ function DeckRow({
 }: {
   card: Card
   count: number
-  isResource: boolean
   canAdd: boolean
   onAdd: () => void
   onRemove: () => void
@@ -111,7 +110,6 @@ export default function DeckList({
                   key={card.id}
                   card={card}
                   count={count}
-                  isResource={false}
                   canAdd={count < 4 && mainTotal < 50}
                   onAdd={() => onAdd(card, false)}
                   onRemove={() => onRemove(card.id, false)}
@@ -135,7 +133,6 @@ export default function DeckList({
                   key={card.id}
                   card={card}
                   count={count}
-                  isResource={true}
                   canAdd={count < 4 && resourceTotal < 10}
                   onAdd={() => onAdd(card, true)}
                   onRemove={() => onRemove(card.id, true)}
