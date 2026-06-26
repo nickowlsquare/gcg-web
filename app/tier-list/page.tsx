@@ -66,7 +66,7 @@ export default function TierListPage() {
           return (
             <div key={tier} className="flex items-start gap-4">
               {/* Tier label */}
-              <div className={`w-10 shrink-0 text-center text-3xl font-black leading-none pt-1 ${styles.label}`}>
+              <div className={`w-10 shrink-0 text-center text-2xl font-black leading-none pt-1 ${styles.label}`}>
                 {tier}
               </div>
 
