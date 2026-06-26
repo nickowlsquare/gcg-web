@@ -104,7 +104,6 @@ export default function TierListPage() {
         deck={activeDeck}
         allCards={allCards}
         onClose={() => setActiveDeck(null)}
-        onLoad={() => {}}
         onCounter={(deck) => {
           const params = new URLSearchParams({ target: deck.name })
           router.push(`/counter?${params.toString()}`)
