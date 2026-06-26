@@ -43,6 +43,12 @@ export default function Navbar() {
           >
             Counter
           </Link>
+          <Link
+            href="/tier-list"
+            className={`text-sm transition-colors ${pathname === '/tier-list' ? 'text-white' : 'text-white/60 hover:text-white'}`}
+          >
+            Tier List
+          </Link>
         </div>
       </div>
     </nav>
