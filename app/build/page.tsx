@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useEffect, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { getAllCards, filterCards } from '../../lib/cards'
 import { addCard, removeCard } from '../../lib/deck'
 import { autofill } from '../../lib/autofill'
@@ -11,7 +12,8 @@ import CardGrid from '../../components/CardGrid'
 import DeckPanel from '../../components/DeckPanel'
 import type { Card, CardColor, CardType, Strategy } from '../../types/card'
 
-export default function BuildPage() {
+function BuildPageContent() {
+  const searchParams = useSearchParams()
   const allCards = useMemo(() => getAllCards(), [])
   const topDecks = useMemo(() => getTopDecks(), [])
 
@@ -27,11 +29,37 @@ export default function BuildPage() {
   // M4: strategy state
   const [strategy, setStrategy] = useState<Strategy | null>(null)
 
+  // M5: pre-fill from ?deck= URL param (runs once on mount)
+  useEffect(() => {
+    const deckName = searchParams.get('deck')
+    if (!deckName) return
+    const found = topDecks.find(d => d.name === deckName)
+    if (!found?.list) return
+
+    const cardMap = new Map(allCards.map(c => [c.id, c]))
+    const newMain: Record<string, number> = {}
+    const newResource: Record<string, number> = {}
+
+    for (const entry of found.list) {
+      const card = cardMap.get(entry.id)
+      if (card?.type === 'resource') {
+        newResource[entry.id] = entry.count
+      } else {
+        newMain[entry.id] = entry.count
+      }
+    }
+
+    setMainDeck(newMain)
+    setResourceDeck(newResource)
+    setSelectedColors(found.colors.slice(0, 2) as CardColor[])
+    setStrategy(found.strategy)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
   // Color toggle with 2-color limit
   function toggleColor(color: CardColor) {
     setSelectedColors(prev => {
       if (prev.includes(color)) return prev.filter(c => c !== color)
-      if (prev.length >= 2) return prev  // ignore 3rd color
+      if (prev.length >= 2) return prev
       return [...prev, color]
     })
   }
@@ -148,5 +176,13 @@ export default function BuildPage() {
         />
       </div>
     </div>
+  )
+}
+
+export default function BuildPage() {
+  return (
+    <Suspense fallback={null}>
+      <BuildPageContent />
+    </Suspense>
   )
 }
