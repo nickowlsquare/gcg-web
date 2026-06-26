@@ -1,411 +1,1172 @@
 [
   {
     "name": "Blue Aggro",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
+    "keyCards": [
+      "GD01-021",
+      "GD01-009"
+    ],
     "strategy": "aggro",
-    "keyCards": ["GD01-021", "GD01-009"],
+    "tier": "A",
     "list": [
-      { "id": "GD01-008", "count": 4 },
-      { "id": "GD01-020", "count": 4 },
-      { "id": "GD01-018", "count": 4 },
-      { "id": "GD01-019", "count": 3 },
-      { "id": "GD01-021", "count": 3 },
-      { "id": "GD01-009", "count": 4 },
-      { "id": "GD01-102", "count": 4 },
-      { "id": "GD01-103", "count": 3 },
-      { "id": "GD01-110", "count": 3 },
-      { "id": "GD01-120", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "GD01-008",
+        "count": 4
+      },
+      {
+        "id": "GD01-020",
+        "count": 4
+      },
+      {
+        "id": "GD01-018",
+        "count": 4
+      },
+      {
+        "id": "GD01-019",
+        "count": 3
+      },
+      {
+        "id": "GD01-021",
+        "count": 3
+      },
+      {
+        "id": "GD01-009",
+        "count": 4
+      },
+      {
+        "id": "GD01-102",
+        "count": 4
+      },
+      {
+        "id": "GD01-103",
+        "count": 3
+      },
+      {
+        "id": "GD01-110",
+        "count": 3
+      },
+      {
+        "id": "GD01-120",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Red Aggro",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
+    "keyCards": [
+      "ST03-001",
+      "GD03-092"
+    ],
     "strategy": "aggro",
-    "keyCards": ["ST03-001", "GD03-092"],
+    "tier": "C",
     "list": [
-      { "id": "ST03-002", "count": 4 },
-      { "id": "GD03-094", "count": 4 },
-      { "id": "ST03-001", "count": 3 },
-      { "id": "GD03-093", "count": 3 },
-      { "id": "GD03-092", "count": 4 },
-      { "id": "GD01-094", "count": 4 },
-      { "id": "GD01-095", "count": 3 },
-      { "id": "GD03-097", "count": 4 },
-      { "id": "GD03-100", "count": 3 },
-      { "id": "ST03-010", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST03-002",
+        "count": 4
+      },
+      {
+        "id": "GD03-094",
+        "count": 4
+      },
+      {
+        "id": "ST03-001",
+        "count": 3
+      },
+      {
+        "id": "GD03-093",
+        "count": 3
+      },
+      {
+        "id": "GD03-092",
+        "count": 4
+      },
+      {
+        "id": "GD01-094",
+        "count": 4
+      },
+      {
+        "id": "GD01-095",
+        "count": 3
+      },
+      {
+        "id": "GD03-097",
+        "count": 4
+      },
+      {
+        "id": "GD03-100",
+        "count": 3
+      },
+      {
+        "id": "ST03-010",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Blue Control",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
+    "keyCards": [
+      "GD01-021",
+      "GD01-102"
+    ],
     "strategy": "control",
-    "keyCards": ["GD01-021", "GD01-102"],
+    "tier": "S",
     "list": [
-      { "id": "GD01-021", "count": 4 },
-      { "id": "GD01-019", "count": 4 },
-      { "id": "GD01-018", "count": 3 },
-      { "id": "GD01-009", "count": 3 },
-      { "id": "GD01-102", "count": 4 },
-      { "id": "GD01-103", "count": 4 },
-      { "id": "GD01-110", "count": 4 },
-      { "id": "GD01-120", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "GD01-021",
+        "count": 4
+      },
+      {
+        "id": "GD01-019",
+        "count": 4
+      },
+      {
+        "id": "GD01-018",
+        "count": 3
+      },
+      {
+        "id": "GD01-009",
+        "count": 3
+      },
+      {
+        "id": "GD01-102",
+        "count": 4
+      },
+      {
+        "id": "GD01-103",
+        "count": 4
+      },
+      {
+        "id": "GD01-110",
+        "count": 4
+      },
+      {
+        "id": "GD01-120",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "White Attrition",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
+    "keyCards": [
+      "ST01-008",
+      "ST01-011"
+    ],
     "strategy": "attrition",
-    "keyCards": ["ST01-008", "ST01-011"],
+    "tier": "S",
     "list": [
-      { "id": "ST01-007", "count": 4 },
-      { "id": "ST01-008", "count": 4 },
-      { "id": "ST01-009", "count": 3 },
-      { "id": "ST01-011", "count": 4 },
-      { "id": "ST01-012", "count": 3 },
-      { "id": "ST01-013", "count": 3 },
-      { "id": "ST01-014", "count": 4 },
-      { "id": "ST01-017", "count": 3 },
-      { "id": "ST01-016", "count": 3 },
-      { "id": "ST01-018", "count": 3 },
-      { "id": "ST01-020", "count": 6 },
-      { "id": "GD01-122", "count": 4 }
+      {
+        "id": "ST01-007",
+        "count": 4
+      },
+      {
+        "id": "ST01-008",
+        "count": 4
+      },
+      {
+        "id": "ST01-009",
+        "count": 3
+      },
+      {
+        "id": "ST01-011",
+        "count": 4
+      },
+      {
+        "id": "ST01-012",
+        "count": 3
+      },
+      {
+        "id": "ST01-013",
+        "count": 3
+      },
+      {
+        "id": "ST01-014",
+        "count": 4
+      },
+      {
+        "id": "ST01-017",
+        "count": 3
+      },
+      {
+        "id": "ST01-016",
+        "count": 3
+      },
+      {
+        "id": "ST01-018",
+        "count": 3
+      },
+      {
+        "id": "ST01-020",
+        "count": 6
+      },
+      {
+        "id": "GD01-122",
+        "count": 4
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Blue-Green Midrange",
-    "colors": ["blue", "green"],
+    "colors": [
+      "blue",
+      "green"
+    ],
+    "keyCards": [
+      "GD01-018",
+      "ST03-006"
+    ],
     "strategy": "midrange",
-    "keyCards": ["GD01-018", "ST03-006"],
+    "tier": "B",
     "list": [
-      { "id": "GD01-018", "count": 4 },
-      { "id": "ST03-006", "count": 4 },
-      { "id": "GD01-019", "count": 3 },
-      { "id": "ST02-001", "count": 3 },
-      { "id": "GD01-009", "count": 3 },
-      { "id": "ST02-003", "count": 3 },
-      { "id": "GD01-102", "count": 3 },
-      { "id": "ST02-015", "count": 3 },
-      { "id": "ST02-016", "count": 3 },
-      { "id": "GD01-120", "count": 4 },
-      { "id": "ST02-020", "count": 3 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "GD01-018",
+        "count": 4
+      },
+      {
+        "id": "ST03-006",
+        "count": 4
+      },
+      {
+        "id": "GD01-019",
+        "count": 3
+      },
+      {
+        "id": "ST02-001",
+        "count": 3
+      },
+      {
+        "id": "GD01-009",
+        "count": 3
+      },
+      {
+        "id": "ST02-003",
+        "count": 3
+      },
+      {
+        "id": "GD01-102",
+        "count": 3
+      },
+      {
+        "id": "ST02-015",
+        "count": 3
+      },
+      {
+        "id": "ST02-016",
+        "count": 3
+      },
+      {
+        "id": "GD01-120",
+        "count": 4
+      },
+      {
+        "id": "ST02-020",
+        "count": 3
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Red Burst",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
+    "keyCards": [
+      "ST03-001",
+      "GD03-092"
+    ],
     "strategy": "aggro",
-    "keyCards": ["ST03-001", "GD03-092"],
+    "tier": "A",
     "list": [
-      { "id": "ST03-001", "count": 4 },
-      { "id": "ST03-002", "count": 4 },
-      { "id": "GD03-094", "count": 4 },
-      { "id": "GD03-092", "count": 4 },
-      { "id": "GD01-094", "count": 4 },
-      { "id": "GD01-095", "count": 4 },
-      { "id": "GD03-097", "count": 4 },
-      { "id": "GD03-100", "count": 2 },
-      { "id": "ST03-010", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST03-001",
+        "count": 4
+      },
+      {
+        "id": "ST03-002",
+        "count": 4
+      },
+      {
+        "id": "GD03-094",
+        "count": 4
+      },
+      {
+        "id": "GD03-092",
+        "count": 4
+      },
+      {
+        "id": "GD01-094",
+        "count": 4
+      },
+      {
+        "id": "GD01-095",
+        "count": 4
+      },
+      {
+        "id": "GD03-097",
+        "count": 4
+      },
+      {
+        "id": "GD03-100",
+        "count": 2
+      },
+      {
+        "id": "ST03-010",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "White Control",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
+    "keyCards": [
+      "ST01-008",
+      "ST01-017"
+    ],
     "strategy": "control",
-    "keyCards": ["ST01-008", "ST01-017"],
+    "tier": "A",
     "list": [
-      { "id": "ST01-007", "count": 4 },
-      { "id": "ST01-008", "count": 4 },
-      { "id": "ST01-009", "count": 3 },
-      { "id": "ST01-011", "count": 4 },
-      { "id": "ST01-012", "count": 3 },
-      { "id": "ST01-013", "count": 3 },
-      { "id": "ST01-014", "count": 3 },
-      { "id": "ST01-017", "count": 4 },
-      { "id": "ST01-016", "count": 3 },
-      { "id": "ST01-018", "count": 3 },
-      { "id": "ST01-020", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST01-007",
+        "count": 4
+      },
+      {
+        "id": "ST01-008",
+        "count": 4
+      },
+      {
+        "id": "ST01-009",
+        "count": 3
+      },
+      {
+        "id": "ST01-011",
+        "count": 4
+      },
+      {
+        "id": "ST01-012",
+        "count": 3
+      },
+      {
+        "id": "ST01-013",
+        "count": 3
+      },
+      {
+        "id": "ST01-014",
+        "count": 3
+      },
+      {
+        "id": "ST01-017",
+        "count": 4
+      },
+      {
+        "id": "ST01-016",
+        "count": 3
+      },
+      {
+        "id": "ST01-018",
+        "count": 3
+      },
+      {
+        "id": "ST01-020",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Green Midrange",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
+    "keyCards": [
+      "ST02-001",
+      "ST03-006"
+    ],
     "strategy": "midrange",
-    "keyCards": ["ST02-001", "ST03-006"],
+    "tier": "B",
     "list": [
-      { "id": "ST03-006", "count": 4 },
-      { "id": "ST02-001", "count": 4 },
-      { "id": "ST02-002", "count": 4 },
-      { "id": "ST02-003", "count": 4 },
-      { "id": "ST02-015", "count": 3 },
-      { "id": "ST02-016", "count": 4 },
-      { "id": "ST02-017", "count": 3 },
-      { "id": "ST02-018", "count": 3 },
-      { "id": "ST02-020", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST03-006",
+        "count": 4
+      },
+      {
+        "id": "ST02-001",
+        "count": 4
+      },
+      {
+        "id": "ST02-002",
+        "count": 4
+      },
+      {
+        "id": "ST02-003",
+        "count": 4
+      },
+      {
+        "id": "ST02-015",
+        "count": 3
+      },
+      {
+        "id": "ST02-016",
+        "count": 4
+      },
+      {
+        "id": "ST02-017",
+        "count": 3
+      },
+      {
+        "id": "ST02-018",
+        "count": 3
+      },
+      {
+        "id": "ST02-020",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Purple Control",
-    "colors": ["purple"],
+    "colors": [
+      "purple"
+    ],
+    "keyCards": [
+      "GD02-001",
+      "GD02-003"
+    ],
     "strategy": "control",
-    "keyCards": ["GD02-001", "GD02-003"],
+    "tier": "A",
     "list": [
-      { "id": "GD02-001", "count": 4 },
-      { "id": "GD02-002", "count": 4 },
-      { "id": "GD02-003", "count": 4 },
-      { "id": "GD02-010", "count": 4 },
-      { "id": "GD02-015", "count": 4 },
-      { "id": "GD02-020", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "GD02-001",
+        "count": 4
+      },
+      {
+        "id": "GD02-002",
+        "count": 4
+      },
+      {
+        "id": "GD02-003",
+        "count": 4
+      },
+      {
+        "id": "GD02-010",
+        "count": 4
+      },
+      {
+        "id": "GD02-015",
+        "count": 4
+      },
+      {
+        "id": "GD02-020",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Blue-Red Aggro",
-    "colors": ["blue", "red"],
+    "colors": [
+      "blue",
+      "red"
+    ],
+    "keyCards": [
+      "GD01-021",
+      "ST03-001"
+    ],
     "strategy": "aggro",
-    "keyCards": ["GD01-021", "ST03-001"],
+    "tier": "B",
     "list": [
-      { "id": "GD01-008", "count": 4 },
-      { "id": "GD01-020", "count": 4 },
-      { "id": "ST03-002", "count": 4 },
-      { "id": "GD03-094", "count": 4 },
-      { "id": "GD01-094", "count": 3 },
-      { "id": "GD03-092", "count": 3 },
-      { "id": "GD01-102", "count": 3 },
-      { "id": "GD03-097", "count": 3 },
-      { "id": "GD01-120", "count": 3 },
-      { "id": "ST03-010", "count": 4 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "GD01-008",
+        "count": 4
+      },
+      {
+        "id": "GD01-020",
+        "count": 4
+      },
+      {
+        "id": "ST03-002",
+        "count": 4
+      },
+      {
+        "id": "GD03-094",
+        "count": 4
+      },
+      {
+        "id": "GD01-094",
+        "count": 3
+      },
+      {
+        "id": "GD03-092",
+        "count": 3
+      },
+      {
+        "id": "GD01-102",
+        "count": 3
+      },
+      {
+        "id": "GD03-097",
+        "count": 3
+      },
+      {
+        "id": "GD01-120",
+        "count": 3
+      },
+      {
+        "id": "ST03-010",
+        "count": 4
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Blue-White Attrition",
-    "colors": ["blue", "white"],
+    "colors": [
+      "blue",
+      "white"
+    ],
+    "keyCards": [
+      "ST01-008",
+      "GD01-018"
+    ],
     "strategy": "attrition",
-    "keyCards": ["ST01-008", "GD01-018"],
+    "tier": "S",
     "list": [
-      { "id": "ST01-007", "count": 4 },
-      { "id": "ST01-008", "count": 4 },
-      { "id": "GD01-018", "count": 4 },
-      { "id": "GD01-020", "count": 3 },
-      { "id": "ST01-011", "count": 4 },
-      { "id": "GD01-009", "count": 3 },
-      { "id": "ST01-016", "count": 3 },
-      { "id": "ST01-014", "count": 3 },
-      { "id": "GD01-110", "count": 2 },
-      { "id": "GD01-120", "count": 3 },
-      { "id": "ST01-020", "count": 4 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST01-007",
+        "count": 4
+      },
+      {
+        "id": "ST01-008",
+        "count": 4
+      },
+      {
+        "id": "GD01-018",
+        "count": 4
+      },
+      {
+        "id": "GD01-020",
+        "count": 3
+      },
+      {
+        "id": "ST01-011",
+        "count": 4
+      },
+      {
+        "id": "GD01-009",
+        "count": 3
+      },
+      {
+        "id": "ST01-016",
+        "count": 3
+      },
+      {
+        "id": "ST01-014",
+        "count": 3
+      },
+      {
+        "id": "GD01-110",
+        "count": 2
+      },
+      {
+        "id": "GD01-120",
+        "count": 3
+      },
+      {
+        "id": "ST01-020",
+        "count": 4
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Red-White Midrange",
-    "colors": ["red", "white"],
+    "colors": [
+      "red",
+      "white"
+    ],
+    "keyCards": [
+      "ST03-001",
+      "ST01-008"
+    ],
     "strategy": "midrange",
-    "keyCards": ["ST03-001", "ST01-008"],
+    "tier": "B",
     "list": [
-      { "id": "ST03-001", "count": 4 },
-      { "id": "ST01-008", "count": 4 },
-      { "id": "GD03-094", "count": 4 },
-      { "id": "ST01-007", "count": 4 },
-      { "id": "GD01-094", "count": 3 },
-      { "id": "ST01-011", "count": 3 },
-      { "id": "GD03-097", "count": 3 },
-      { "id": "ST01-014", "count": 3 },
-      { "id": "ST03-010", "count": 3 },
-      { "id": "ST01-020", "count": 4 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST03-001",
+        "count": 4
+      },
+      {
+        "id": "ST01-008",
+        "count": 4
+      },
+      {
+        "id": "GD03-094",
+        "count": 4
+      },
+      {
+        "id": "ST01-007",
+        "count": 4
+      },
+      {
+        "id": "GD01-094",
+        "count": 3
+      },
+      {
+        "id": "ST01-011",
+        "count": 3
+      },
+      {
+        "id": "GD03-097",
+        "count": 3
+      },
+      {
+        "id": "ST01-014",
+        "count": 3
+      },
+      {
+        "id": "ST03-010",
+        "count": 3
+      },
+      {
+        "id": "ST01-020",
+        "count": 4
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Green-White Midrange",
-    "colors": ["green", "white"],
+    "colors": [
+      "green",
+      "white"
+    ],
+    "keyCards": [
+      "ST02-001",
+      "ST01-008"
+    ],
     "strategy": "midrange",
-    "keyCards": ["ST02-001", "ST01-008"],
+    "tier": "C",
     "list": [
-      { "id": "ST02-001", "count": 4 },
-      { "id": "ST01-008", "count": 4 },
-      { "id": "ST02-002", "count": 4 },
-      { "id": "ST01-007", "count": 4 },
-      { "id": "ST02-003", "count": 3 },
-      { "id": "ST01-011", "count": 3 },
-      { "id": "ST02-016", "count": 3 },
-      { "id": "ST01-014", "count": 2 },
-      { "id": "ST02-020", "count": 4 },
-      { "id": "ST01-020", "count": 3 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST02-001",
+        "count": 4
+      },
+      {
+        "id": "ST01-008",
+        "count": 4
+      },
+      {
+        "id": "ST02-002",
+        "count": 4
+      },
+      {
+        "id": "ST01-007",
+        "count": 4
+      },
+      {
+        "id": "ST02-003",
+        "count": 3
+      },
+      {
+        "id": "ST01-011",
+        "count": 3
+      },
+      {
+        "id": "ST02-016",
+        "count": 3
+      },
+      {
+        "id": "ST01-014",
+        "count": 2
+      },
+      {
+        "id": "ST02-020",
+        "count": 4
+      },
+      {
+        "id": "ST01-020",
+        "count": 3
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Blue-Purple Control",
-    "colors": ["blue", "purple"],
+    "colors": [
+      "blue",
+      "purple"
+    ],
+    "keyCards": [
+      "GD01-021",
+      "GD02-001"
+    ],
     "strategy": "control",
-    "keyCards": ["GD01-021", "GD02-001"],
+    "tier": "A",
     "list": [
-      { "id": "GD01-021", "count": 4 },
-      { "id": "GD02-001", "count": 4 },
-      { "id": "GD01-019", "count": 4 },
-      { "id": "GD02-002", "count": 4 },
-      { "id": "GD01-009", "count": 3 },
-      { "id": "GD02-003", "count": 3 },
-      { "id": "GD01-103", "count": 3 },
-      { "id": "GD02-010", "count": 3 },
-      { "id": "GD01-110", "count": 2 },
-      { "id": "GD01-120", "count": 3 },
-      { "id": "GD02-020", "count": 4 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "GD01-021",
+        "count": 4
+      },
+      {
+        "id": "GD02-001",
+        "count": 4
+      },
+      {
+        "id": "GD01-019",
+        "count": 4
+      },
+      {
+        "id": "GD02-002",
+        "count": 4
+      },
+      {
+        "id": "GD01-009",
+        "count": 3
+      },
+      {
+        "id": "GD02-003",
+        "count": 3
+      },
+      {
+        "id": "GD01-103",
+        "count": 3
+      },
+      {
+        "id": "GD02-010",
+        "count": 3
+      },
+      {
+        "id": "GD01-110",
+        "count": 2
+      },
+      {
+        "id": "GD01-120",
+        "count": 3
+      },
+      {
+        "id": "GD02-020",
+        "count": 4
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "White Aggro",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
+    "keyCards": [
+      "ST01-007",
+      "ST01-011"
+    ],
     "strategy": "aggro",
-    "keyCards": ["ST01-007", "ST01-011"],
+    "tier": "C",
     "list": [
-      { "id": "ST01-007", "count": 4 },
-      { "id": "ST01-009", "count": 4 },
-      { "id": "ST01-011", "count": 4 },
-      { "id": "ST01-014", "count": 4 },
-      { "id": "ST01-012", "count": 4 },
-      { "id": "ST01-018", "count": 4 },
-      { "id": "ST01-016", "count": 2 },
-      { "id": "ST01-020", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST01-007",
+        "count": 4
+      },
+      {
+        "id": "ST01-009",
+        "count": 4
+      },
+      {
+        "id": "ST01-011",
+        "count": 4
+      },
+      {
+        "id": "ST01-014",
+        "count": 4
+      },
+      {
+        "id": "ST01-012",
+        "count": 4
+      },
+      {
+        "id": "ST01-018",
+        "count": 4
+      },
+      {
+        "id": "ST01-016",
+        "count": 2
+      },
+      {
+        "id": "ST01-020",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Green Control",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
+    "keyCards": [
+      "ST02-001",
+      "ST02-017"
+    ],
     "strategy": "control",
-    "keyCards": ["ST02-001", "ST02-017"],
+    "tier": "B",
     "list": [
-      { "id": "ST02-001", "count": 4 },
-      { "id": "ST02-015", "count": 4 },
-      { "id": "ST02-017", "count": 4 },
-      { "id": "ST02-003", "count": 4 },
-      { "id": "ST02-016", "count": 4 },
-      { "id": "ST02-018", "count": 4 },
-      { "id": "ST02-002", "count": 2 },
-      { "id": "ST02-020", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST02-001",
+        "count": 4
+      },
+      {
+        "id": "ST02-015",
+        "count": 4
+      },
+      {
+        "id": "ST02-017",
+        "count": 4
+      },
+      {
+        "id": "ST02-003",
+        "count": 4
+      },
+      {
+        "id": "ST02-016",
+        "count": 4
+      },
+      {
+        "id": "ST02-018",
+        "count": 4
+      },
+      {
+        "id": "ST02-002",
+        "count": 2
+      },
+      {
+        "id": "ST02-020",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Red Midrange",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
+    "keyCards": [
+      "ST03-001",
+      "GD03-093"
+    ],
     "strategy": "midrange",
-    "keyCards": ["ST03-001", "GD03-093"],
+    "tier": "C",
     "list": [
-      { "id": "ST03-001", "count": 4 },
-      { "id": "GD03-093", "count": 4 },
-      { "id": "GD03-094", "count": 4 },
-      { "id": "GD03-092", "count": 3 },
-      { "id": "GD01-094", "count": 3 },
-      { "id": "GD01-095", "count": 3 },
-      { "id": "GD03-097", "count": 3 },
-      { "id": "GD03-100", "count": 3 },
-      { "id": "ST03-010", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST03-001",
+        "count": 4
+      },
+      {
+        "id": "GD03-093",
+        "count": 4
+      },
+      {
+        "id": "GD03-094",
+        "count": 4
+      },
+      {
+        "id": "GD03-092",
+        "count": 3
+      },
+      {
+        "id": "GD01-094",
+        "count": 3
+      },
+      {
+        "id": "GD01-095",
+        "count": 3
+      },
+      {
+        "id": "GD03-097",
+        "count": 3
+      },
+      {
+        "id": "GD03-100",
+        "count": 3
+      },
+      {
+        "id": "ST03-010",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Red-Green Aggro",
-    "colors": ["red", "green"],
+    "colors": [
+      "red",
+      "green"
+    ],
+    "keyCards": [
+      "ST03-001",
+      "ST02-001"
+    ],
     "strategy": "aggro",
-    "keyCards": ["ST03-001", "ST02-001"],
+    "tier": "C",
     "list": [
-      { "id": "ST03-002", "count": 4 },
-      { "id": "ST03-006", "count": 4 },
-      { "id": "GD03-094", "count": 4 },
-      { "id": "ST02-002", "count": 4 },
-      { "id": "GD03-092", "count": 3 },
-      { "id": "ST02-003", "count": 3 },
-      { "id": "GD03-097", "count": 4 },
-      { "id": "ST03-010", "count": 4 },
-      { "id": "ST02-020", "count": 3 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST03-002",
+        "count": 4
+      },
+      {
+        "id": "ST03-006",
+        "count": 4
+      },
+      {
+        "id": "GD03-094",
+        "count": 4
+      },
+      {
+        "id": "ST02-002",
+        "count": 4
+      },
+      {
+        "id": "GD03-092",
+        "count": 3
+      },
+      {
+        "id": "ST02-003",
+        "count": 3
+      },
+      {
+        "id": "GD03-097",
+        "count": 4
+      },
+      {
+        "id": "ST03-010",
+        "count": 4
+      },
+      {
+        "id": "ST02-020",
+        "count": 3
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "Blue Midrange",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
+    "keyCards": [
+      "GD01-021",
+      "GD01-009"
+    ],
     "strategy": "midrange",
-    "keyCards": ["GD01-021", "GD01-009"],
+    "tier": "B",
     "list": [
-      { "id": "GD01-018", "count": 4 },
-      { "id": "GD01-021", "count": 4 },
-      { "id": "GD01-019", "count": 4 },
-      { "id": "GD01-020", "count": 3 },
-      { "id": "GD01-009", "count": 4 },
-      { "id": "GD01-102", "count": 4 },
-      { "id": "GD01-103", "count": 4 },
-      { "id": "GD01-110", "count": 3 },
-      { "id": "GD01-120", "count": 7 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "GD01-018",
+        "count": 4
+      },
+      {
+        "id": "GD01-021",
+        "count": 4
+      },
+      {
+        "id": "GD01-019",
+        "count": 4
+      },
+      {
+        "id": "GD01-020",
+        "count": 3
+      },
+      {
+        "id": "GD01-009",
+        "count": 4
+      },
+      {
+        "id": "GD01-102",
+        "count": 4
+      },
+      {
+        "id": "GD01-103",
+        "count": 4
+      },
+      {
+        "id": "GD01-110",
+        "count": 3
+      },
+      {
+        "id": "GD01-120",
+        "count": 7
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"
   },
   {
     "name": "White-Purple Attrition",
-    "colors": ["white", "purple"],
+    "colors": [
+      "white",
+      "purple"
+    ],
+    "keyCards": [
+      "GD02-001",
+      "ST01-008"
+    ],
     "strategy": "attrition",
-    "keyCards": ["GD02-001", "ST01-008"],
+    "tier": "B",
     "list": [
-      { "id": "ST01-007", "count": 4 },
-      { "id": "GD02-001", "count": 4 },
-      { "id": "ST01-008", "count": 4 },
-      { "id": "GD02-002", "count": 4 },
-      { "id": "ST01-011", "count": 3 },
-      { "id": "GD02-003", "count": 3 },
-      { "id": "ST01-016", "count": 3 },
-      { "id": "GD02-010", "count": 3 },
-      { "id": "GD02-015", "count": 2 },
-      { "id": "ST01-020", "count": 3 },
-      { "id": "GD02-020", "count": 4 },
-      { "id": "GD01-122", "count": 3 }
+      {
+        "id": "ST01-007",
+        "count": 4
+      },
+      {
+        "id": "GD02-001",
+        "count": 4
+      },
+      {
+        "id": "ST01-008",
+        "count": 4
+      },
+      {
+        "id": "GD02-002",
+        "count": 4
+      },
+      {
+        "id": "ST01-011",
+        "count": 3
+      },
+      {
+        "id": "GD02-003",
+        "count": 3
+      },
+      {
+        "id": "ST01-016",
+        "count": 3
+      },
+      {
+        "id": "GD02-010",
+        "count": 3
+      },
+      {
+        "id": "GD02-015",
+        "count": 2
+      },
+      {
+        "id": "ST01-020",
+        "count": 3
+      },
+      {
+        "id": "GD02-020",
+        "count": 4
+      },
+      {
+        "id": "GD01-122",
+        "count": 3
+      }
     ],
     "source": "sample",
     "date": "2026-06-01"

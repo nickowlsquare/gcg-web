@@ -10,6 +10,7 @@ function mockDeck(overrides: Partial<TopDeck> = {}): TopDeck {
     name: 'Test Deck',
     colors: ['blue'],
     strategy: 'aggro',
+    tier: 'C',
     keyCards: [],
     list: [],
     source: 'sample',

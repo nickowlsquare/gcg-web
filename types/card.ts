@@ -53,6 +53,7 @@ export interface TopDeck {
   colors: CardColor[]
   keyCards: string[]
   strategy: Strategy
+  tier: 'S' | 'A' | 'B' | 'C'
   list?: DeckEntry[]
   source: string
   date: string

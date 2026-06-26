@@ -154,6 +154,7 @@ describe('autofill — TopDeck signal', () => {
       colors: ['blue'],
       keyCards: [],
       strategy: 'aggro',
+      tier: 'C',
       list: [{ id: featuredCard.id, count: 4 }],
       source: 'test',
       date: '2026-06-25',
@@ -169,6 +170,7 @@ describe('autofill — TopDeck signal', () => {
       colors: ['blue'],
       keyCards: [],
       strategy: 'control',   // does not match 'aggro'
+      tier: 'C',
       list: pool.slice(0, 5).map(c => ({ id: c.id, count: 4 })),
       source: 'test',
       date: '2026-06-25',
@@ -184,6 +186,7 @@ describe('autofill — TopDeck signal', () => {
       colors: ['blue'],
       keyCards: [],
       strategy: 'aggro',
+      tier: 'C',
       // list is undefined
       source: 'test',
       date: '2026-06-25',

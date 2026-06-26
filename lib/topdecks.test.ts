@@ -14,6 +14,7 @@ describe('getTopDecks', () => {
       expect(deck.name).toBeTruthy()
       expect(Array.isArray(deck.colors)).toBe(true)
       expect(typeof deck.strategy).toBe('string')
+      expect(['S', 'A', 'B', 'C']).toContain(deck.tier)
       expect(Array.isArray(deck.keyCards)).toBe(true)
       expect(Array.isArray(deck.list)).toBe(true)
       expect(deck.list!.length).toBeGreaterThan(0)
