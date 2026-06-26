@@ -37,7 +37,12 @@ export default function Navbar() {
           >
             Top Decks
           </Link>
-          <span className="text-sm text-white/20 cursor-not-allowed">Counter</span>
+          <Link
+            href="/counter"
+            className={`text-sm transition-colors ${pathname === '/counter' ? 'text-white' : 'text-white/60 hover:text-white'}`}
+          >
+            Counter
+          </Link>
         </div>
       </div>
     </nav>
