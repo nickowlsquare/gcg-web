@@ -9,7 +9,7 @@ function totalCount(deck: Record<string, number>): number {
  * Build a frequency map: cardId → number of matching TopDecks that contain it.
  * A TopDeck matches if strategy matches, at least one color overlaps, and list is non-empty.
  */
-function buildTopDeckFrequency(
+export function buildTopDeckFrequency(
   topDecks: TopDeck[],
   strategy: Strategy,
   colors: CardColor[]
@@ -30,7 +30,7 @@ function buildTopDeckFrequency(
  * Returns true if the card's colors are all within the selected colors.
  * Colorless cards (empty colors array) always pass.
  */
-function cardFitsColors(card: Card, colors: CardColor[]): boolean {
+export function cardFitsColors(card: Card, colors: CardColor[]): boolean {
   if (card.colors.length === 0) return true
   return card.colors.every(c => colors.includes(c))
 }
@@ -40,7 +40,7 @@ function cardFitsColors(card: Card, colors: CardColor[]): boolean {
  * Respects `limit` (total cards) and `maxPerCard` (copies per card).
  * Returns a new deck — does not mutate input.
  */
-function greedyFill(
+export function greedyFill(
   deck: Record<string, number>,
   sorted: Card[],
   limit: number,
