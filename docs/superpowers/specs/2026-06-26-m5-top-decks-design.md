@@ -37,7 +37,7 @@ interface TopDeck {
 - White Attrition, Blue-White Attrition
 - (fill remaining slots with tournament variants)
 
-**Note:** Card IDs in `list` reference the full GCG card pool. The `/top-decks` drawer resolves names from `allCards`; unknown IDs display as the raw ID string — acceptable until `cards.json` is fully populated.
+**Constraint:** All card IDs referenced in any `list` entry must exist in `data/cards.json`. The `/build` load handler splits main vs. resource cards by looking up `card.type === 'resource'`; an unknown card ID produces `undefined` and defaults to the main deck, which would incorrectly place resource cards. Therefore M5 must expand `cards.json` to include every card referenced in the new top deck entries.
 
 `lib/topdecks.ts` — no changes. `getTopDecks()` continues to work as-is.
 
