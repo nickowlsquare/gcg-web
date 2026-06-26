@@ -159,6 +159,10 @@ export default function TopDecksPage() {
         allCards={allCards}
         onClose={() => setActiveTopDeck(null)}
         onLoad={handleLoad}
+        onCounter={(deck) => {
+          const params = new URLSearchParams({ target: deck.name })
+          router.push(`/counter?${params.toString()}`)
+        }}
       />
     </div>
   )
