@@ -3,7 +3,9 @@
     "id": "ST03-001",
     "name": "Sinanju",
     "type": "unit",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 6,
     "cost": 6,
     "ap": 5,
@@ -12,9 +14,17 @@
     "isLR": true,
     "set": "ST03",
     "sourceTitle": "Mobile Suit Gundam Unicorn",
-    "traits": ["Neo Zeon"],
-    "keywords": ["During Pair", "High-Maneuver"],
-    "zones": ["Space", "Earth"],
+    "traits": [
+      "Neo Zeon"
+    ],
+    "keywords": [
+      "During Pair",
+      "High-Maneuver"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
     "linkRequirement": "Full Frontal",
     "text": "[During Pair][High-Maneuver] When this unit attacks, if it is paired with a Pilot, it gains +2 AP until end of turn.",
     "isBanned": false,
@@ -24,7 +34,9 @@
     "id": "ST03-006",
     "name": "Char's Zaku II",
     "type": "unit",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
     "level": 3,
     "cost": 2,
     "ap": 3,
@@ -33,9 +45,16 @@
     "isLR": true,
     "set": "ST03",
     "sourceTitle": "Mobile Suit Gundam",
-    "traits": ["Zeon"],
-    "keywords": ["Destroyed"],
-    "zones": ["Space", "Earth"],
+    "traits": [
+      "Zeon"
+    ],
+    "keywords": [
+      "Destroyed"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
     "linkRequirement": "Char Aznable",
     "text": "[Destroyed] When this unit is destroyed, draw 1 card.",
     "isBanned": false,
@@ -45,7 +64,9 @@
     "id": "GD01-018",
     "name": "ReZEL",
     "type": "unit",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 3,
     "cost": 2,
     "ap": 4,
@@ -54,9 +75,14 @@
     "isLR": false,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam Unicorn",
-    "traits": ["Earth Federation"],
+    "traits": [
+      "Earth Federation"
+    ],
     "keywords": [],
-    "zones": ["Space", "Earth"],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
     "text": "This unit can transform. When it transforms, it gains the [High-Maneuver] keyword.",
     "isBanned": false,
     "isLimited": false
@@ -65,7 +91,9 @@
     "id": "GD01-008",
     "name": "Guntank",
     "type": "unit",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 2,
     "cost": 1,
     "ap": 1,
@@ -74,9 +102,17 @@
     "isLR": false,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam",
-    "traits": ["Earth Federation", "White Base Team"],
-    "keywords": ["Deploy"],
-    "zones": ["Space", "Earth"],
+    "traits": [
+      "Earth Federation",
+      "White Base Team"
+    ],
+    "keywords": [
+      "Deploy"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
     "text": "[Deploy] Draw 1. Then, discard 1.",
     "isBanned": false,
     "isLimited": false
@@ -85,7 +121,9 @@
     "id": "ST01-007",
     "name": "Gundam Aerial (Bit on Form)",
     "type": "unit",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 4,
     "cost": 2,
     "ap": 3,
@@ -94,9 +132,14 @@
     "isLR": false,
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
-    "traits": ["Academy"],
+    "traits": [
+      "Academy"
+    ],
     "keywords": [],
-    "zones": ["Space", "Earth"],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
     "linkRequirement": "Suletta Mercury",
     "text": "When paired with [Suletta Mercury], this unit gains +1 AP and [Blocker].",
     "isBanned": false,
@@ -106,7 +149,9 @@
     "id": "ST01-011",
     "name": "Suletta Mercury",
     "type": "pilot",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 4,
     "cost": 1,
     "ap": 1,
@@ -118,8 +163,14 @@
     "isLR": false,
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
-    "traits": ["Academy"],
-    "keywords": ["Burst", "Attack", "Once per turn"],
+    "traits": [
+      "Academy"
+    ],
+    "keywords": [
+      "Burst",
+      "Attack",
+      "Once per turn"
+    ],
     "text": "[Burst][Attack][Once per turn] When this pilot attacks while linked, draw 1 card.",
     "isBanned": false,
     "isLimited": false
@@ -128,7 +179,9 @@
     "id": "GD03-092",
     "name": "Nyaan",
     "type": "pilot",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 4,
     "cost": 4,
     "apBoost": 1,
@@ -138,8 +191,14 @@
     "isLR": false,
     "set": "GD03",
     "sourceTitle": "Mobile Suit Gundam GQuuuuuuX",
-    "traits": ["Zeon", "Newtype"],
-    "keywords": ["Burst", "When Linked"],
+    "traits": [
+      "Zeon",
+      "Newtype"
+    ],
+    "keywords": [
+      "Burst",
+      "When Linked"
+    ],
     "text": "[Burst][When Linked] When this pilot is linked, your opponent discards 1 card.",
     "isBanned": false,
     "isLimited": false
@@ -148,7 +207,9 @@
     "id": "GD01-094",
     "name": "Yzak Jule",
     "type": "pilot",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 3,
     "cost": 1,
     "ap": 1,
@@ -160,8 +221,14 @@
     "isLR": false,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam SEED",
-    "traits": ["ZAFT", "Coordinator"],
-    "keywords": ["Burst", "Once per turn"],
+    "traits": [
+      "ZAFT",
+      "Coordinator"
+    ],
+    "keywords": [
+      "Burst",
+      "Once per turn"
+    ],
     "text": "[Burst][Once per turn] When a unit you control destroys an enemy unit, draw 1 card.",
     "isBanned": false,
     "isLimited": false
@@ -170,7 +237,9 @@
     "id": "GD01-102",
     "name": "Securing the Supply Line",
     "type": "command",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 4,
     "cost": 2,
     "rarity": "U",
@@ -178,7 +247,9 @@
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam",
     "traits": [],
-    "keywords": ["Main"],
+    "keywords": [
+      "Main"
+    ],
     "text": "[Main] Search your deck for 1 Earth Federation unit with cost 2 or less, reveal it, and add it to your hand. Shuffle your deck.",
     "isBanned": false,
     "isLimited": false
@@ -187,7 +258,9 @@
     "id": "ST01-014",
     "name": "Unforeseen Incident",
     "type": "command",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 3,
     "cost": 1,
     "rarity": "C",
@@ -195,7 +268,11 @@
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
     "traits": [],
-    "keywords": ["Action", "Burst", "Main"],
+    "keywords": [
+      "Action",
+      "Burst",
+      "Main"
+    ],
     "text": "[Action][Main] Until end of turn, 1 unit you control gains +1 AP. [Burst] Draw 1.",
     "isBanned": false,
     "isLimited": false
@@ -204,7 +281,9 @@
     "id": "ST01-016",
     "name": "Asticassia School of Technology, Earth House",
     "type": "base",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 2,
     "cost": 1,
     "hp": 5,
@@ -212,9 +291,18 @@
     "isLR": false,
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
-    "traits": ["Academy", "Stronghold"],
-    "keywords": ["Burst", "Deploy", "Activate Main"],
-    "zones": ["Space"],
+    "traits": [
+      "Academy",
+      "Stronghold"
+    ],
+    "keywords": [
+      "Burst",
+      "Deploy",
+      "Activate Main"
+    ],
+    "zones": [
+      "Space"
+    ],
     "text": "[Burst][Deploy] When this base is deployed, draw 1. [Activate Main] Rest this base: gain 1 resource.",
     "isBanned": false,
     "isLimited": false
@@ -223,7 +311,9 @@
     "id": "ST02-015",
     "name": "Saint Gabriel Institute",
     "type": "base",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
     "level": 2,
     "cost": 2,
     "hp": 5,
@@ -231,9 +321,17 @@
     "isLR": false,
     "set": "ST02",
     "sourceTitle": "Mobile Suit Gundam Wing",
-    "traits": ["Academy", "Stronghold"],
-    "keywords": ["Burst", "Deploy"],
-    "zones": ["Earth"],
+    "traits": [
+      "Academy",
+      "Stronghold"
+    ],
+    "keywords": [
+      "Burst",
+      "Deploy"
+    ],
+    "zones": [
+      "Earth"
+    ],
     "text": "[Burst][Deploy] When this base is deployed, you may deploy 1 cost-1 unit from your hand without paying its cost.",
     "isBanned": false,
     "isLimited": false
@@ -242,14 +340,18 @@
     "id": "GD01-120",
     "name": "Earth Federation Energy Pack",
     "type": "resource",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 1,
     "cost": 1,
     "rarity": "C",
     "isLR": false,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam",
-    "traits": ["Earth Federation"],
+    "traits": [
+      "Earth Federation"
+    ],
     "keywords": [],
     "text": "Resource: Gain 1 energy."
   },
@@ -257,14 +359,18 @@
     "id": "ST03-010",
     "name": "Minovsky Particle Generator",
     "type": "resource",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 1,
     "cost": 1,
     "rarity": "C",
     "isLR": false,
     "set": "ST03",
     "sourceTitle": "Mobile Suit Gundam",
-    "traits": ["Zeon"],
+    "traits": [
+      "Zeon"
+    ],
     "keywords": [],
     "text": "Resource: Gain 1 energy."
   },
@@ -272,14 +378,18 @@
     "id": "ST02-020",
     "name": "Zero System Power Cell",
     "type": "resource",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
     "level": 1,
     "cost": 1,
     "rarity": "C",
     "isLR": false,
     "set": "ST02",
     "sourceTitle": "Mobile Suit Gundam Wing",
-    "traits": ["Preventers"],
+    "traits": [
+      "Preventers"
+    ],
     "keywords": [],
     "text": "Resource: Gain 1 energy."
   },
@@ -287,14 +397,18 @@
     "id": "ST01-020",
     "name": "GUND Format Drive",
     "type": "resource",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 1,
     "cost": 1,
     "rarity": "C",
     "isLR": false,
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
-    "traits": ["Academy"],
+    "traits": [
+      "Academy"
+    ],
     "keywords": [],
     "text": "Resource: Gain 1 energy."
   },
@@ -302,14 +416,18 @@
     "id": "ST01-021",
     "name": "Holder's Mark",
     "type": "resource",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 1,
     "cost": 1,
     "rarity": "C",
     "isLR": false,
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
-    "traits": ["Academy"],
+    "traits": [
+      "Academy"
+    ],
     "keywords": [],
     "text": "Resource: Gain 1 energy."
   },
@@ -317,14 +435,18 @@
     "id": "GD02-020",
     "name": "Nu Psychoframe Cell",
     "type": "resource",
-    "colors": ["purple"],
+    "colors": [
+      "purple"
+    ],
     "level": 1,
     "cost": 1,
     "rarity": "C",
     "isLR": false,
     "set": "GD02",
     "sourceTitle": "Mobile Suit Gundam: Hathaway's Flash",
-    "traits": ["Mafty"],
+    "traits": [
+      "Mafty"
+    ],
     "keywords": [],
     "text": "Resource: Gain 1 energy."
   },
@@ -347,7 +469,9 @@
     "id": "GD01-019",
     "name": "Delta Plus",
     "type": "unit",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 4,
     "cost": 3,
     "ap": 4,
@@ -356,16 +480,28 @@
     "isLR": false,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam Unicorn",
-    "traits": ["Earth Federation", "Newtype"],
-    "keywords": ["High-Maneuver"],
-    "zones": ["Space", "Earth"],
-    "text": "[High-Maneuver] When this unit attacks, it may attack a unit in any zone."
+    "traits": [
+      "Earth Federation",
+      "Newtype"
+    ],
+    "keywords": [
+      "High-Maneuver"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
+    "text": "[High-Maneuver] When this unit attacks, it may attack a unit in any zone.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD01-020",
     "name": "Jegan",
     "type": "unit",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 2,
     "cost": 1,
     "ap": 2,
@@ -374,16 +510,27 @@
     "isLR": false,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam Unicorn",
-    "traits": ["Earth Federation"],
-    "keywords": ["Deploy"],
-    "zones": ["Space", "Earth"],
-    "text": "[Deploy] When deployed, draw 1 card."
+    "traits": [
+      "Earth Federation"
+    ],
+    "keywords": [
+      "Deploy"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
+    "text": "[Deploy] When deployed, draw 1 card.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD01-021",
     "name": "Nu Gundam",
     "type": "unit",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 6,
     "cost": 5,
     "ap": 6,
@@ -392,17 +539,29 @@
     "isLR": true,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam: Char's Counterattack",
-    "traits": ["Earth Federation", "Newtype"],
-    "keywords": ["Burst", "Attack"],
-    "zones": ["Space"],
+    "traits": [
+      "Earth Federation",
+      "Newtype"
+    ],
+    "keywords": [
+      "Burst",
+      "Attack"
+    ],
+    "zones": [
+      "Space"
+    ],
     "linkRequirement": "Amuro Ray",
-    "text": "[Burst][Attack] When this unit attacks, negate the battle ability of all enemy units until end of battle."
+    "text": "[Burst][Attack] When this unit attacks, negate the battle ability of all enemy units until end of battle.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD01-009",
     "name": "Amuro Ray",
     "type": "pilot",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 5,
     "cost": 1,
     "apBoost": 2,
@@ -412,15 +571,25 @@
     "isLR": true,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam: Char's Counterattack",
-    "traits": ["Earth Federation", "Newtype"],
-    "keywords": ["Burst", "When Linked"],
-    "text": "[Burst][When Linked] When paired, this unit gains [Barrier]."
+    "traits": [
+      "Earth Federation",
+      "Newtype"
+    ],
+    "keywords": [
+      "Burst",
+      "When Linked"
+    ],
+    "text": "[Burst][When Linked] When paired, this unit gains [Barrier].",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD01-103",
     "name": "Minovsky Craft Strike",
     "type": "command",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 3,
     "cost": 2,
     "rarity": "U",
@@ -428,14 +597,21 @@
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam",
     "traits": [],
-    "keywords": ["Action", "Main"],
-    "text": "[Action][Main] Choose 1 unit you control. It gains +2 AP until end of turn."
+    "keywords": [
+      "Action",
+      "Main"
+    ],
+    "text": "[Action][Main] Choose 1 unit you control. It gains +2 AP until end of turn.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD01-110",
     "name": "Jaburo Underground Fortress",
     "type": "base",
-    "colors": ["blue"],
+    "colors": [
+      "blue"
+    ],
     "level": 2,
     "cost": 2,
     "hp": 6,
@@ -443,16 +619,28 @@
     "isLR": false,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam",
-    "traits": ["Earth Federation", "Stronghold"],
-    "keywords": ["Burst", "Deploy"],
-    "zones": ["Earth"],
-    "text": "[Burst][Deploy] When deployed, search your deck for 1 Earth Federation unit, reveal it, add to hand."
+    "traits": [
+      "Earth Federation",
+      "Stronghold"
+    ],
+    "keywords": [
+      "Burst",
+      "Deploy"
+    ],
+    "zones": [
+      "Earth"
+    ],
+    "text": "[Burst][Deploy] When deployed, search your deck for 1 Earth Federation unit, reveal it, add to hand.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD03-093",
     "name": "Zeong",
     "type": "unit",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 5,
     "cost": 4,
     "ap": 5,
@@ -461,16 +649,27 @@
     "isLR": false,
     "set": "GD03",
     "sourceTitle": "Mobile Suit Gundam",
-    "traits": ["Zeon", "Newtype"],
-    "keywords": ["Remote Bit"],
-    "zones": ["Space"],
-    "text": "[Remote Bit] This unit can attack from any zone."
+    "traits": [
+      "Zeon",
+      "Newtype"
+    ],
+    "keywords": [
+      "Remote Bit"
+    ],
+    "zones": [
+      "Space"
+    ],
+    "text": "[Remote Bit] This unit can attack from any zone.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD03-094",
     "name": "Gelgoog",
     "type": "unit",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 3,
     "cost": 2,
     "ap": 3,
@@ -479,16 +678,25 @@
     "isLR": false,
     "set": "GD03",
     "sourceTitle": "Mobile Suit Gundam",
-    "traits": ["Zeon"],
+    "traits": [
+      "Zeon"
+    ],
     "keywords": [],
-    "zones": ["Space", "Earth"],
-    "text": "When this unit attacks a unit with lower HP, it gains +1 AP."
+    "zones": [
+      "Space",
+      "Earth"
+    ],
+    "text": "When this unit attacks a unit with lower HP, it gains +1 AP.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST03-002",
     "name": "Zaku II (Char Custom)",
     "type": "unit",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 3,
     "cost": 1,
     "ap": 2,
@@ -497,16 +705,27 @@
     "isLR": false,
     "set": "ST03",
     "sourceTitle": "Mobile Suit Gundam",
-    "traits": ["Zeon"],
-    "keywords": ["Deploy"],
-    "zones": ["Space", "Earth"],
-    "text": "[Deploy] When deployed, this unit gains +1 AP until end of turn."
+    "traits": [
+      "Zeon"
+    ],
+    "keywords": [
+      "Deploy"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
+    "text": "[Deploy] When deployed, this unit gains +1 AP until end of turn.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD01-095",
     "name": "Athrun Zala",
     "type": "pilot",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 4,
     "cost": 1,
     "apBoost": 1,
@@ -516,15 +735,25 @@
     "isLR": false,
     "set": "GD01",
     "sourceTitle": "Mobile Suit Gundam SEED",
-    "traits": ["ZAFT", "Coordinator"],
-    "keywords": ["Burst", "Attack"],
-    "text": "[Burst][Attack] When attacking, if you control 3+ ZAFT units, draw 1 card."
+    "traits": [
+      "ZAFT",
+      "Coordinator"
+    ],
+    "keywords": [
+      "Burst",
+      "Attack"
+    ],
+    "text": "[Burst][Attack] When attacking, if you control 3+ ZAFT units, draw 1 card.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD03-097",
     "name": "Mirage Colloid Veil",
     "type": "command",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 2,
     "cost": 1,
     "rarity": "C",
@@ -532,14 +761,22 @@
     "set": "GD03",
     "sourceTitle": "Mobile Suit Gundam SEED",
     "traits": [],
-    "keywords": ["Action", "Main", "Burst"],
-    "text": "[Action][Main][Burst] Target unit gains Stealth until end of turn."
+    "keywords": [
+      "Action",
+      "Main",
+      "Burst"
+    ],
+    "text": "[Action][Main][Burst] Target unit gains Stealth until end of turn.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD03-100",
     "name": "Zeon Asteroid Base",
     "type": "base",
-    "colors": ["red"],
+    "colors": [
+      "red"
+    ],
     "level": 2,
     "cost": 2,
     "hp": 5,
@@ -547,16 +784,28 @@
     "isLR": false,
     "set": "GD03",
     "sourceTitle": "Mobile Suit Gundam",
-    "traits": ["Zeon", "Stronghold"],
-    "keywords": ["Burst", "Deploy"],
-    "zones": ["Space"],
-    "text": "[Burst][Deploy] When deployed, deal 1 damage to an enemy unit."
+    "traits": [
+      "Zeon",
+      "Stronghold"
+    ],
+    "keywords": [
+      "Burst",
+      "Deploy"
+    ],
+    "zones": [
+      "Space"
+    ],
+    "text": "[Burst][Deploy] When deployed, deal 1 damage to an enemy unit.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST02-001",
     "name": "Wing Gundam Zero",
     "type": "unit",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
     "level": 5,
     "cost": 4,
     "ap": 5,
@@ -565,17 +814,28 @@
     "isLR": true,
     "set": "ST02",
     "sourceTitle": "Mobile Suit Gundam Wing",
-    "traits": ["Preventers"],
-    "keywords": ["Barrier"],
-    "zones": ["Space", "Earth"],
+    "traits": [
+      "Preventers"
+    ],
+    "keywords": [
+      "Barrier"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
     "linkRequirement": "Heero Yuy",
-    "text": "[Barrier] This unit cannot be destroyed by effects."
+    "text": "[Barrier] This unit cannot be destroyed by effects.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST02-002",
     "name": "Heavyarms Custom",
     "type": "unit",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
     "level": 3,
     "cost": 2,
     "ap": 3,
@@ -584,16 +844,26 @@
     "isLR": false,
     "set": "ST02",
     "sourceTitle": "Mobile Suit Gundam Wing",
-    "traits": ["Preventers"],
-    "keywords": ["Burst"],
-    "zones": ["Earth"],
-    "text": "[Burst] When this unit destroys an enemy unit, deal 1 damage to your opponent."
+    "traits": [
+      "Preventers"
+    ],
+    "keywords": [
+      "Burst"
+    ],
+    "zones": [
+      "Earth"
+    ],
+    "text": "[Burst] When this unit destroys an enemy unit, deal 1 damage to your opponent.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST02-003",
     "name": "Trowa Barton",
     "type": "pilot",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
     "level": 3,
     "cost": 1,
     "apBoost": 1,
@@ -603,15 +873,24 @@
     "isLR": false,
     "set": "ST02",
     "sourceTitle": "Mobile Suit Gundam Wing",
-    "traits": ["Preventers"],
-    "keywords": ["Burst", "When Linked"],
-    "text": "[Burst][When Linked] When paired, draw 1 if you control 2+ Preventers units."
+    "traits": [
+      "Preventers"
+    ],
+    "keywords": [
+      "Burst",
+      "When Linked"
+    ],
+    "text": "[Burst][When Linked] When paired, draw 1 if you control 2+ Preventers units.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST02-016",
     "name": "Operation Meteor",
     "type": "command",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
     "level": 2,
     "cost": 1,
     "rarity": "C",
@@ -619,14 +898,21 @@
     "set": "ST02",
     "sourceTitle": "Mobile Suit Gundam Wing",
     "traits": [],
-    "keywords": ["Main", "Burst"],
-    "text": "[Main][Burst] Choose 1 Preventers unit you control. It gains +1 AP and +1 HP until end of turn."
+    "keywords": [
+      "Main",
+      "Burst"
+    ],
+    "text": "[Main][Burst] Choose 1 Preventers unit you control. It gains +1 AP and +1 HP until end of turn.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST02-017",
     "name": "Preventers Strike",
     "type": "command",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
     "level": 3,
     "cost": 2,
     "rarity": "U",
@@ -634,14 +920,21 @@
     "set": "ST02",
     "sourceTitle": "Mobile Suit Gundam Wing",
     "traits": [],
-    "keywords": ["Action", "Main"],
-    "text": "[Action][Main] Return 1 enemy unit to its owner's hand."
+    "keywords": [
+      "Action",
+      "Main"
+    ],
+    "text": "[Action][Main] Return 1 enemy unit to its owner's hand.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST02-018",
     "name": "Winner Estate",
     "type": "base",
-    "colors": ["green"],
+    "colors": [
+      "green"
+    ],
     "level": 2,
     "cost": 2,
     "hp": 5,
@@ -649,16 +942,28 @@
     "isLR": false,
     "set": "ST02",
     "sourceTitle": "Mobile Suit Gundam Wing",
-    "traits": ["Preventers", "Stronghold"],
-    "keywords": ["Burst", "Deploy"],
-    "zones": ["Earth"],
-    "text": "[Burst][Deploy] When deployed, all Preventers units gain +1 HP until end of turn."
+    "traits": [
+      "Preventers",
+      "Stronghold"
+    ],
+    "keywords": [
+      "Burst",
+      "Deploy"
+    ],
+    "zones": [
+      "Earth"
+    ],
+    "text": "[Burst][Deploy] When deployed, all Preventers units gain +1 HP until end of turn.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST01-008",
     "name": "Aerial (Permet Score Six)",
     "type": "unit",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 5,
     "cost": 4,
     "ap": 4,
@@ -667,17 +972,30 @@
     "isLR": false,
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
-    "traits": ["Academy", "GUND-ARM"],
-    "keywords": ["Burst", "Repair"],
-    "zones": ["Space", "Earth"],
+    "traits": [
+      "Academy",
+      "GUND-ARM"
+    ],
+    "keywords": [
+      "Burst",
+      "Repair"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
     "linkRequirement": "Suletta Mercury",
-    "text": "[Burst][Repair] When this unit attacks, restore 1 HP to all Academy units you control."
+    "text": "[Burst][Repair] When this unit attacks, restore 1 HP to all Academy units you control.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST01-009",
     "name": "Dilanza (Guel's Custom)",
     "type": "unit",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 3,
     "cost": 2,
     "ap": 3,
@@ -686,16 +1004,25 @@
     "isLR": false,
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
-    "traits": ["Academy"],
+    "traits": [
+      "Academy"
+    ],
     "keywords": [],
-    "zones": ["Space", "Earth"],
-    "text": "When this unit blocks, it gains +1 HP until end of battle."
+    "zones": [
+      "Space",
+      "Earth"
+    ],
+    "text": "When this unit blocks, it gains +1 HP until end of battle.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST01-012",
     "name": "Miorine Rembran",
     "type": "pilot",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 4,
     "cost": 1,
     "apBoost": 1,
@@ -705,15 +1032,25 @@
     "isLR": false,
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
-    "traits": ["Academy"],
-    "keywords": ["Burst", "When Linked", "Recover"],
-    "text": "[Burst][When Linked][Recover] When paired, you may recover 1 card from your discard."
+    "traits": [
+      "Academy"
+    ],
+    "keywords": [
+      "Burst",
+      "When Linked",
+      "Recover"
+    ],
+    "text": "[Burst][When Linked][Recover] When paired, you may recover 1 card from your discard.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST01-013",
     "name": "Shaddiq Zenelli",
     "type": "pilot",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 3,
     "cost": 1,
     "apBoost": 1,
@@ -723,15 +1060,24 @@
     "isLR": false,
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
-    "traits": ["Academy"],
-    "keywords": ["Burst", "Attack"],
-    "text": "[Burst][Attack] When attacking, look at the top 2 cards of your deck; put 1 in hand and 1 at the bottom."
+    "traits": [
+      "Academy"
+    ],
+    "keywords": [
+      "Burst",
+      "Attack"
+    ],
+    "text": "[Burst][Attack] When attacking, look at the top 2 cards of your deck; put 1 in hand and 1 at the bottom.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST01-017",
     "name": "Quiet Zero Activation",
     "type": "command",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 4,
     "cost": 3,
     "rarity": "R",
@@ -739,14 +1085,20 @@
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
     "traits": [],
-    "keywords": ["Main"],
-    "text": "[Main] Destroy 1 enemy unit with 3 or less HP. Gain 1 life."
+    "keywords": [
+      "Main"
+    ],
+    "text": "[Main] Destroy 1 enemy unit with 3 or less HP. Gain 1 life.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "ST01-018",
     "name": "GUND-Bit Barrage",
     "type": "command",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "level": 2,
     "cost": 1,
     "rarity": "C",
@@ -754,14 +1106,22 @@
     "set": "ST01",
     "sourceTitle": "Mobile Suit Gundam: The Witch from Mercury",
     "traits": [],
-    "keywords": ["Action", "Burst", "Main"],
-    "text": "[Action][Main][Burst] Deal 1 damage to any target."
+    "keywords": [
+      "Action",
+      "Burst",
+      "Main"
+    ],
+    "text": "[Action][Main][Burst] Deal 1 damage to any target.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD02-001",
     "name": "Xi Gundam",
     "type": "unit",
-    "colors": ["purple"],
+    "colors": [
+      "purple"
+    ],
     "level": 6,
     "cost": 5,
     "ap": 6,
@@ -770,17 +1130,29 @@
     "isLR": true,
     "set": "GD02",
     "sourceTitle": "Mobile Suit Gundam: Hathaway's Flash",
-    "traits": ["Mafty"],
-    "keywords": ["Barrier", "High-Maneuver"],
-    "zones": ["Space", "Earth"],
+    "traits": [
+      "Mafty"
+    ],
+    "keywords": [
+      "Barrier",
+      "High-Maneuver"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
     "linkRequirement": "Hathaway Noa",
-    "text": "[Barrier][High-Maneuver] Cannot be targeted by opponent's effects. Attacks any zone."
+    "text": "[Barrier][High-Maneuver] Cannot be targeted by opponent's effects. Attacks any zone.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD02-002",
     "name": "Penelope",
     "type": "unit",
-    "colors": ["purple"],
+    "colors": [
+      "purple"
+    ],
     "level": 5,
     "cost": 4,
     "ap": 5,
@@ -789,16 +1161,28 @@
     "isLR": false,
     "set": "GD02",
     "sourceTitle": "Mobile Suit Gundam: Hathaway's Flash",
-    "traits": ["Earth Federation"],
-    "keywords": ["Burst", "Deploy"],
-    "zones": ["Space", "Earth"],
-    "text": "[Burst][Deploy] When deployed, destroy 1 enemy unit with 2 or less HP."
+    "traits": [
+      "Earth Federation"
+    ],
+    "keywords": [
+      "Burst",
+      "Deploy"
+    ],
+    "zones": [
+      "Space",
+      "Earth"
+    ],
+    "text": "[Burst][Deploy] When deployed, destroy 1 enemy unit with 2 or less HP.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD02-003",
     "name": "Hathaway Noa",
     "type": "pilot",
-    "colors": ["purple"],
+    "colors": [
+      "purple"
+    ],
     "level": 5,
     "cost": 2,
     "apBoost": 2,
@@ -808,15 +1192,24 @@
     "isLR": true,
     "set": "GD02",
     "sourceTitle": "Mobile Suit Gundam: Hathaway's Flash",
-    "traits": ["Mafty"],
-    "keywords": ["Burst", "When Linked"],
-    "text": "[Burst][When Linked] When paired, destroy 1 enemy unit with cost 3 or less."
+    "traits": [
+      "Mafty"
+    ],
+    "keywords": [
+      "Burst",
+      "When Linked"
+    ],
+    "text": "[Burst][When Linked] When paired, destroy 1 enemy unit with cost 3 or less.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD02-010",
     "name": "Mafty Declaration",
     "type": "command",
-    "colors": ["purple"],
+    "colors": [
+      "purple"
+    ],
     "level": 3,
     "cost": 2,
     "rarity": "U",
@@ -824,14 +1217,21 @@
     "set": "GD02",
     "sourceTitle": "Mobile Suit Gundam: Hathaway's Flash",
     "traits": [],
-    "keywords": ["Main", "Barrier"],
-    "text": "[Main] Choose 1 unit you control. It gains [Barrier] until end of turn."
+    "keywords": [
+      "Main",
+      "Barrier"
+    ],
+    "text": "[Main] Choose 1 unit you control. It gains [Barrier] until end of turn.",
+    "isBanned": false,
+    "isLimited": false
   },
   {
     "id": "GD02-015",
     "name": "Khanbaliq",
     "type": "base",
-    "colors": ["purple"],
+    "colors": [
+      "purple"
+    ],
     "level": 3,
     "cost": 3,
     "hp": 7,
@@ -839,9 +1239,19 @@
     "isLR": false,
     "set": "GD02",
     "sourceTitle": "Mobile Suit Gundam: Hathaway's Flash",
-    "traits": ["Mafty", "Stronghold"],
-    "keywords": ["Burst", "Deploy"],
-    "zones": ["Earth"],
-    "text": "[Burst][Deploy] When deployed, all enemy units lose 1 HP."
+    "traits": [
+      "Mafty",
+      "Stronghold"
+    ],
+    "keywords": [
+      "Burst",
+      "Deploy"
+    ],
+    "zones": [
+      "Earth"
+    ],
+    "text": "[Burst][Deploy] When deployed, all enemy units lose 1 HP.",
+    "isBanned": false,
+    "isLimited": false
   }
 ]
