@@ -32,9 +32,10 @@ interface TopDeckDrawerProps {
   allCards: Card[]
   onClose: () => void
   onLoad: (deck: TopDeck) => void
+  onCounter?: (deck: TopDeck) => void
 }
 
-export default function TopDeckDrawer({ deck, allCards, onClose, onLoad }: TopDeckDrawerProps) {
+export default function TopDeckDrawer({ deck, allCards, onClose, onLoad, onCounter }: TopDeckDrawerProps) {
   if (!deck) return null
 
   const cardMap = new Map(allCards.map(c => [c.id, c]))
@@ -101,7 +102,7 @@ export default function TopDeckDrawer({ deck, allCards, onClose, onLoad }: TopDe
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-white/10 shrink-0">
+        <div className="p-4 border-t border-white/10 shrink-0 space-y-2">
           <button
             type="button"
             onClick={() => onLoad(deck)}
@@ -109,6 +110,15 @@ export default function TopDeckDrawer({ deck, allCards, onClose, onLoad }: TopDe
           >
             載入到 Build
           </button>
+          {onCounter && (
+            <button
+              type="button"
+              onClick={() => onCounter(deck)}
+              className="w-full rounded-lg border border-white/20 py-2 text-sm font-semibold text-white/50 hover:text-white/80 hover:border-white/40 transition-colors"
+            >
+              Counter 此 Deck
+            </button>
+          )}
         </div>
       </div>
     </>
