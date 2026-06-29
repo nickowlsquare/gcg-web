@@ -2,12 +2,14 @@
 
 import { useState, useMemo } from 'react'
 import { useMatchHistory } from '../../hooks/useMatchHistory'
+import { useActiveDeck } from '../../hooks/useActiveDeck'
 import { getTopDecks } from '../../lib/topdecks'
 import { getWinRate, buildLearnedTopDecks } from '../../lib/history'
 import type { MatchResult } from '../../types/card'
 
 export default function HistoryPage() {
   const { history, add } = useMatchHistory()
+  const { activeDeckId } = useActiveDeck()
   const topDecks = useMemo(() => getTopDecks(), [])
 
   // Form visibility
@@ -38,6 +40,7 @@ export default function HistoryPage() {
       outcome,
       opponentDeck: opponentDeck || null,
       notes,
+      deckId: activeDeckId ?? undefined,
     }
     add(entry)
     // Reset form
