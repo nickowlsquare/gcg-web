@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { getAllCards } from '../../lib/cards'
 import { useSavedDecks } from '../../hooks/useSavedDecks'
@@ -20,12 +20,24 @@ export default function DecksPage() {
   const { savedDecks, remove } = useSavedDecks()
   const router = useRouter()
   const [copiedId, setCopiedId] = useState<string | null>(null)
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (copyTimerRef.current) clearTimeout(copyTimerRef.current)
+    }
+  }, [])
 
   async function handleCopy(deck: SavedDeck) {
-    const text = formatDeckExport(deck, allCards)
-    await navigator.clipboard.writeText(text)
-    setCopiedId(deck.id)
-    setTimeout(() => setCopiedId(null), 2000)
+    try {
+      const text = formatDeckExport(deck, allCards)
+      await navigator.clipboard.writeText(text)
+      if (copyTimerRef.current) clearTimeout(copyTimerRef.current)
+      setCopiedId(deck.id)
+      copyTimerRef.current = setTimeout(() => setCopiedId(null), 2000)
+    } catch {
+      // clipboard permission denied or page not focused — silently ignore
+    }
   }
 
   return (
@@ -58,21 +70,21 @@ export default function DecksPage() {
                   <div className="flex items-center gap-2 shrink-0">
                     <button
                       type="button"
-                      onClick={() => router.push('/build?saved=' + deck.id)}
+                      onClick={() => router.push(`/build?saved=${deck.id}`)}
                       className="rounded border border-accent-gold/40 bg-accent-gold/10 px-3 py-1 text-xs font-semibold text-accent-gold transition-colors hover:bg-accent-gold/20"
                     >
                       載入
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleCopy(deck)}
+                      onClick={() => void handleCopy(deck)}
                       className={`rounded border px-3 py-1 text-xs font-semibold transition-colors ${
                         isCopied
                           ? 'border-green-600/50 bg-green-700/20 text-green-400'
                           : 'border-white/20 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white/80'
                       }`}
                     >
-                      {isCopied ? '已複製！' : 'Copy'}
+                      {isCopied ? '已複製！' : '複製'}
                     </button>
                     <button
                       type="button"
@@ -86,12 +98,12 @@ export default function DecksPage() {
 
                 {/* Bottom row: metadata */}
                 <div className="mt-1 flex flex-wrap gap-x-2 gap-y-0.5 text-xs text-white/30">
-                  {colorLabel && <span>{colorLabel}</span>}
-                  <span>·</span>
+                  {colorLabel && <><span className="text-white/40">·</span> <span>{colorLabel}</span></>}
+                  <span className="text-white/40">·</span>
                   <span>{deck.strategy}</span>
-                  <span>·</span>
+                  <span className="text-white/40">·</span>
                   <span>{date}</span>
-                  <span>·</span>
+                  <span className="text-white/40">·</span>
                   <span>{mainCount} main / {resourceCount} res</span>
                 </div>
               </div>
