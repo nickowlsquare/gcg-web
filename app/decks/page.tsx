@@ -5,6 +5,10 @@ import { useRouter } from 'next/navigation'
 import { getAllCards } from '../../lib/cards'
 import { useSavedDecks } from '../../hooks/useSavedDecks'
 import { formatDeckExport } from '../../lib/savedDecks'
+import { useMatchHistory } from '../../hooks/useMatchHistory'
+import { useActiveDeck } from '../../hooks/useActiveDeck'
+import { getDeckStats } from '../../lib/deckStats'
+import { getTopDecks } from '../../lib/topdecks'
 import type { SavedDeck } from '../../types/card'
 
 const COLOR_LABELS: Record<string, string> = {
@@ -19,6 +23,9 @@ export default function DecksPage() {
   const allCards = useMemo(() => getAllCards(), [])
   const { savedDecks, remove } = useSavedDecks()
   const router = useRouter()
+  const { history } = useMatchHistory()
+  const { activeDeckId } = useActiveDeck()
+  const topDecks = useMemo(() => getTopDecks(), [])
   const [copiedId, setCopiedId] = useState<string | null>(null)
   const copyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -64,9 +71,16 @@ export default function DecksPage() {
               >
                 {/* Top row: name + actions */}
                 <div className="flex items-center justify-between gap-3">
-                  <span className="text-sm font-semibold text-white/90 min-w-0 truncate">
-                    {deck.name}
-                  </span>
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="text-sm font-semibold text-white/90 truncate">
+                      {deck.name}
+                    </span>
+                    {activeDeckId === deck.id && (
+                      <span className="shrink-0 rounded border border-accent-gold/50 bg-accent-gold/10 px-1.5 py-0.5 text-[10px] text-accent-gold">
+                        使用中
+                      </span>
+                    )}
+                  </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <button
                       type="button"
@@ -106,6 +120,32 @@ export default function DecksPage() {
                   <span className="text-white/40">·</span>
                   <span>{mainCount} main / {resourceCount} res</span>
                 </div>
+
+                {/* Stats row */}
+                {(() => {
+                  const stats = getDeckStats(deck.id, history, topDecks)
+                  const total = stats.wins + stats.losses
+                  if (total === 0) {
+                    return (
+                      <p className="mt-1.5 border-t border-white/5 pt-1.5 text-xs text-white/25">
+                        未有比賽記錄
+                      </p>
+                    )
+                  }
+                  return (
+                    <div className="mt-1.5 border-t border-white/5 pt-1.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs">
+                      <span className="text-green-400">{stats.wins}勝</span>
+                      <span className="text-red-400">{stats.losses}負</span>
+                      <span className="text-accent-gold">{Math.round(stats.winRate * 100)}%</span>
+                      {Object.entries(stats.byStrategy).map(([strat, s]) => (
+                        <span key={strat} className="text-white/40">
+                          · vs {strat}: <span className="text-green-400/80">{s.wins}W</span>{' '}
+                          <span className="text-red-400/80">{s.losses}L</span>
+                        </span>
+                      ))}
+                    </div>
+                  )
+                })()}
               </div>
             )
           })}
