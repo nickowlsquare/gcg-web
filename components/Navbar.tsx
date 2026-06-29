@@ -55,6 +55,12 @@ export default function Navbar() {
           >
             History
           </Link>
+          <Link
+            href="/decks"
+            className={`text-sm transition-colors ${pathname === '/decks' ? 'text-white' : 'text-white/60 hover:text-white'}`}
+          >
+            Decks
+          </Link>
         </div>
       </div>
     </nav>
