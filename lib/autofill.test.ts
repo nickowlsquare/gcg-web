@@ -227,3 +227,35 @@ describe('autofill — immutability', () => {
     expect(pool.map(c => c.id)).toEqual(idsBefore)
   })
 })
+
+describe('autofill — matchHistory learning', () => {
+  it('cards from a winning top deck appear in output when matchHistory is provided', () => {
+    const pool = makeLargePool()
+    const featuredCard = pool[0]  // first unit card in pool
+    const topDeck: TopDeck = {
+      name: 'Test Aggro',
+      colors: ['blue'],
+      keyCards: [],
+      strategy: 'aggro',
+      tier: 'C',
+      list: [{ id: featuredCard.id, count: 4 }],
+      source: 'test',
+      date: '2026-06-29',
+    }
+    const history: import('../types/card').MatchResult[] = [
+      {
+        id: '1',
+        date: '2026-06-29T00:00:00.000Z',
+        deckName: 'Test Aggro',
+        deckIsTopDeck: true,
+        outcome: 'win',
+        opponentDeck: null,
+        notes: '',
+      },
+    ]
+    // Pass topDecks as [topDeck] so buildLearnedTopDecks can find it by name
+    const result = autofill({}, {}, pool, [topDeck], 'aggro', ['blue'], history)
+    // featuredCard should appear because it was boosted via learned frequency
+    expect(result.mainDeck[featuredCard.id]).toBeGreaterThan(0)
+  })
+})

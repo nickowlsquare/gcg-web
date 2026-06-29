@@ -1,5 +1,6 @@
-import type { Card, CardColor, Strategy, TopDeck } from '../types/card'
+import type { Card, CardColor, Strategy, TopDeck, MatchResult } from '../types/card'
 import { scoreCard } from './strategy'
+import { buildLearnedTopDecks } from './history'
 
 function totalCount(deck: Record<string, number>): number {
   return Object.values(deck).reduce((sum, n) => sum + n, 0)
@@ -65,9 +66,12 @@ export function autofill(
   allCards: Card[],
   topDecks: TopDeck[],
   strategy: Strategy,
-  colors: CardColor[]
+  colors: CardColor[],
+  matchHistory?: MatchResult[]
 ): { mainDeck: Record<string, number>; resourceDeck: Record<string, number> } {
-  const topDeckFrequency = buildTopDeckFrequency(topDecks, strategy, colors)
+  const learnedDecks = matchHistory ? buildLearnedTopDecks(matchHistory, topDecks) : []
+  const allDecks = [...topDecks, ...learnedDecks]
+  const topDeckFrequency = buildTopDeckFrequency(allDecks, strategy, colors)
 
   // Filter by color fit; split by type
   const eligible = allCards.filter(c => cardFitsColors(c, colors))
