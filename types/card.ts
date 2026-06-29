@@ -69,3 +69,14 @@ export interface MatchResult {
   opponentDeck: string | null  // top deck name; null if not recorded
   notes: string           // free text; empty string if not provided
 }
+
+export interface SavedDeck {
+  id: string              // crypto.randomUUID()
+  name: string            // user-given name
+  createdAt: string       // ISO 8601
+  colors: CardColor[]
+  strategy: Strategy
+  mainDeck: Record<string, number>
+  resourceDeck: Record<string, number>
+  source: 'build' | 'counter'
+}
