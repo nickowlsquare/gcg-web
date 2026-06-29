@@ -12,6 +12,8 @@ import CardGrid from '../../components/CardGrid'
 import DeckPanel from '../../components/DeckPanel'
 import TopDeckDrawer from '../../components/TopDeckDrawer'
 import { useMatchHistory } from '../../hooks/useMatchHistory'
+import { useSavedDecks } from '../../hooks/useSavedDecks'
+import SaveDeckModal from '../../components/SaveDeckModal'
 import type { Card, CardColor, CardType, Strategy, TopDeck } from '../../types/card'
 
 function CounterPageContent() {
@@ -19,6 +21,8 @@ function CounterPageContent() {
   const allCards = useMemo(() => getAllCards(), [])
   const topDecks = useMemo(() => getTopDecks(), [])
   const { history } = useMatchHistory()
+  const { save } = useSavedDecks()
+  const [saveModalOpen, setSaveModalOpen] = useState(false)
 
   const [targetDeck, setTargetDeck] = useState<TopDeck | null>(null)
   const [showTargetDrawer, setShowTargetDrawer] = useState(false)
@@ -78,6 +82,20 @@ function CounterPageContent() {
     const result = counterAutofill(mainDeck, resourceDeck, allCards, topDecks, targetDeck, selectedColors, strategy, history)
     setMainDeck(result.mainDeck)
     setResourceDeck(result.resourceDeck)
+    setSaveModalOpen(true)
+  }
+
+  function handleSave(name: string) {
+    save({
+      id: crypto.randomUUID(),
+      name,
+      createdAt: new Date().toISOString(),
+      colors: selectedColors,
+      strategy: strategy!,
+      mainDeck,
+      resourceDeck,
+      source: 'counter',
+    })
   }
 
   const filteredCards = useMemo(() => {
@@ -183,6 +201,18 @@ function CounterPageContent() {
           onRemove={handleRemove}
         />
       </div>
+
+      <SaveDeckModal
+        open={saveModalOpen}
+        onClose={() => setSaveModalOpen(false)}
+        onSave={handleSave}
+        deckInfo={{
+          colors: selectedColors,
+          strategy: strategy ?? 'aggro',
+          mainCount: Object.values(mainDeck).reduce((s, n) => s + n, 0),
+          resourceCount: Object.values(resourceDeck).reduce((s, n) => s + n, 0),
+        }}
+      />
 
       {/* Target deck drawer (view only — no load action from /counter) */}
       <TopDeckDrawer
