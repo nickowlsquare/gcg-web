@@ -11,6 +11,8 @@ import FilterSidebar from '../../components/FilterSidebar'
 import CardGrid from '../../components/CardGrid'
 import DeckPanel from '../../components/DeckPanel'
 import { useMatchHistory } from '../../hooks/useMatchHistory'
+import { useSavedDecks } from '../../hooks/useSavedDecks'
+import SaveDeckModal from '../../components/SaveDeckModal'
 import type { Card, CardColor, CardType, Strategy } from '../../types/card'
 
 function BuildPageContent() {
@@ -18,6 +20,8 @@ function BuildPageContent() {
   const allCards = useMemo(() => getAllCards(), [])
   const topDecks = useMemo(() => getTopDecks(), [])
   const { history } = useMatchHistory()
+  const { savedDecks, save } = useSavedDecks()
+  const [saveModalOpen, setSaveModalOpen] = useState(false)
 
   // Deck state
   const [mainDeck, setMainDeck] = useState<Record<string, number>>({})
@@ -57,6 +61,18 @@ function BuildPageContent() {
     setStrategy(found.strategy)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // M9: pre-fill from ?saved=<id> URL param (runs once on mount)
+  useEffect(() => {
+    const id = searchParams.get('saved')
+    if (!id) return
+    const found = savedDecks.find(d => d.id === id)
+    if (!found) return
+    setMainDeck(found.mainDeck)
+    setResourceDeck(found.resourceDeck)
+    setSelectedColors(found.colors)
+    setStrategy(found.strategy)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
   // Color toggle with 2-color limit
   function toggleColor(color: CardColor) {
     setSelectedColors(prev => {
@@ -78,6 +94,20 @@ function BuildPageContent() {
     const result = autofill(mainDeck, resourceDeck, allCards, topDecks, strategy, selectedColors, history)
     setMainDeck(result.mainDeck)
     setResourceDeck(result.resourceDeck)
+    setSaveModalOpen(true)
+  }
+
+  function handleSave(name: string) {
+    save({
+      id: crypto.randomUUID(),
+      name,
+      createdAt: new Date().toISOString(),
+      colors: selectedColors,
+      strategy: strategy!,
+      mainDeck,
+      resourceDeck,
+      source: 'build',
+    })
   }
 
   const filteredCards = useMemo(() => {
@@ -177,6 +207,18 @@ function BuildPageContent() {
           onRemove={handleRemove}
         />
       </div>
+
+      <SaveDeckModal
+        open={saveModalOpen}
+        onClose={() => setSaveModalOpen(false)}
+        onSave={handleSave}
+        deckInfo={{
+          colors: selectedColors,
+          strategy: strategy ?? 'aggro',
+          mainCount: Object.values(mainDeck).reduce((s, n) => s + n, 0),
+          resourceCount: Object.values(resourceDeck).reduce((s, n) => s + n, 0),
+        }}
+      />
     </div>
   )
 }
