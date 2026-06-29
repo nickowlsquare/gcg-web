@@ -10,12 +10,14 @@ import AutoBuildBar from '../../components/AutoBuildBar'
 import FilterSidebar from '../../components/FilterSidebar'
 import CardGrid from '../../components/CardGrid'
 import DeckPanel from '../../components/DeckPanel'
+import { useMatchHistory } from '../../hooks/useMatchHistory'
 import type { Card, CardColor, CardType, Strategy } from '../../types/card'
 
 function BuildPageContent() {
   const searchParams = useSearchParams()
   const allCards = useMemo(() => getAllCards(), [])
   const topDecks = useMemo(() => getTopDecks(), [])
+  const { history } = useMatchHistory()
 
   // Deck state
   const [mainDeck, setMainDeck] = useState<Record<string, number>>({})
@@ -73,7 +75,7 @@ function BuildPageContent() {
   // Auto Build handler
   function handleAutoBuild() {
     if (!strategy || selectedColors.length === 0) return
-    const result = autofill(mainDeck, resourceDeck, allCards, topDecks, strategy, selectedColors)
+    const result = autofill(mainDeck, resourceDeck, allCards, topDecks, strategy, selectedColors, history)
     setMainDeck(result.mainDeck)
     setResourceDeck(result.resourceDeck)
   }

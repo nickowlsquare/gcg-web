@@ -49,6 +49,12 @@ export default function Navbar() {
           >
             Tier List
           </Link>
+          <Link
+            href="/history"
+            className={`text-sm transition-colors ${pathname === '/history' ? 'text-white' : 'text-white/60 hover:text-white'}`}
+          >
+            History
+          </Link>
         </div>
       </div>
     </nav>

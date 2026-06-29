@@ -11,12 +11,14 @@ import FilterSidebar from '../../components/FilterSidebar'
 import CardGrid from '../../components/CardGrid'
 import DeckPanel from '../../components/DeckPanel'
 import TopDeckDrawer from '../../components/TopDeckDrawer'
+import { useMatchHistory } from '../../hooks/useMatchHistory'
 import type { Card, CardColor, CardType, Strategy, TopDeck } from '../../types/card'
 
 function CounterPageContent() {
   const searchParams = useSearchParams()
   const allCards = useMemo(() => getAllCards(), [])
   const topDecks = useMemo(() => getTopDecks(), [])
+  const { history } = useMatchHistory()
 
   const [targetDeck, setTargetDeck] = useState<TopDeck | null>(null)
   const [showTargetDrawer, setShowTargetDrawer] = useState(false)
@@ -73,7 +75,7 @@ function CounterPageContent() {
 
   function handleCounterBuild() {
     if (!targetDeck || selectedColors.length === 0 || !strategy) return
-    const result = counterAutofill(mainDeck, resourceDeck, allCards, topDecks, targetDeck, selectedColors, strategy)
+    const result = counterAutofill(mainDeck, resourceDeck, allCards, topDecks, targetDeck, selectedColors, strategy, history)
     setMainDeck(result.mainDeck)
     setResourceDeck(result.resourceDeck)
   }
