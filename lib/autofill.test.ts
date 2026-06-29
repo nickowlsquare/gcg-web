@@ -229,9 +229,25 @@ describe('autofill — immutability', () => {
 })
 
 describe('autofill — matchHistory learning', () => {
-  it('cards from a winning top deck appear in output when matchHistory is provided', () => {
-    const pool = makeLargePool()
-    const featuredCard = pool[0]  // first unit card in pool
+  it('cards from a winning top deck appear in output only when matchHistory is provided', () => {
+    // featuredCard has deliberately poor stats (ap 0, hp 0) so it scores last without
+    // any frequency boost — 60 stronger cards fill the 50-card main deck ahead of it.
+    const featuredCard: Card = makeCard({
+      id: 'LEARN-FEATURED',
+      type: 'unit',
+      colors: ['blue'],
+      cost: 3,
+      ap: 0,
+      hp: 0,
+    })
+
+    // 60 high-stat units that will crowd out featuredCard when there is no frequency boost
+    const bigPool: Card[] = [
+      featuredCard,
+      ...makeCards(60, 'H', { type: 'unit', colors: ['blue'], cost: 3, ap: 3, hp: 3 }),
+      ...makeCards(5,  'R', { type: 'resource', colors: ['blue'], cost: 1, ap: 0, hp: 0 }),
+    ]
+
     const topDeck: TopDeck = {
       name: 'Test Aggro',
       colors: ['blue'],
@@ -253,9 +269,13 @@ describe('autofill — matchHistory learning', () => {
         notes: '',
       },
     ]
-    // Pass topDecks as [topDeck] so buildLearnedTopDecks can find it by name
-    const result = autofill({}, {}, pool, [topDeck], 'aggro', ['blue'], history)
-    // featuredCard should appear because it was boosted via learned frequency
+
+    // Without matchHistory — 60 high-stat units fill the deck; featuredCard (ap=0, hp=0) is skipped
+    const base = autofill({}, {}, bigPool, [], 'aggro', ['blue'])
+    expect(base.mainDeck[featuredCard.id] ?? 0).toBe(0)
+
+    // With matchHistory — learned topDeck boosts featuredCard's frequency score so it appears
+    const result = autofill({}, {}, bigPool, [topDeck], 'aggro', ['blue'], history)
     expect(result.mainDeck[featuredCard.id]).toBeGreaterThan(0)
   })
 })
