@@ -59,3 +59,13 @@ export interface TopDeck {
   date: string
   placement?: number
 }
+
+export interface MatchResult {
+  id: string              // crypto.randomUUID()
+  date: string            // ISO 8601
+  deckName: string        // top deck name or custom name
+  deckIsTopDeck: boolean  // true if deckName matches a TopDeck.name
+  outcome: 'win' | 'loss'
+  opponentDeck: string | null  // top deck name; null if not recorded
+  notes: string           // free text; empty string if not provided
+}
