@@ -98,12 +98,13 @@ function BuildPageContent() {
   }
 
   function handleSave(name: string) {
+    if (!strategy) return
     save({
       id: crypto.randomUUID(),
       name,
       createdAt: new Date().toISOString(),
       colors: selectedColors,
-      strategy: strategy!,
+      strategy,
       mainDeck,
       resourceDeck,
       source: 'build',
@@ -214,8 +215,8 @@ function BuildPageContent() {
         onSave={handleSave}
         deckInfo={{
           colors: selectedColors,
-          strategy: strategy ?? 'aggro',
-          mainCount: Object.values(mainDeck).reduce((s, n) => s + n, 0),
+          strategy: strategy!,
+          mainCount: mainTotal,
           resourceCount: Object.values(resourceDeck).reduce((s, n) => s + n, 0),
         }}
       />
