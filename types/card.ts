@@ -68,6 +68,7 @@ export interface MatchResult {
   outcome: 'win' | 'loss'
   opponentDeck: string | null  // top deck name; null if not recorded
   notes: string           // free text; empty string if not provided
+  deckId?: string         // ID of the SavedDeck used; undefined for pre-M10 records
 }
 
 export interface SavedDeck {
