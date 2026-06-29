@@ -8,8 +8,8 @@ const STORAGE_KEY = 'gcg-match-history'
 
 export function useMatchHistory() {
   const [history, setHistory] = useState<MatchResult[]>(() => {
-    // Lazy initializer — only runs once on client mount.
-    // Safe because this hook is only used in 'use client' components.
+    // Guard against SSR prerender — localStorage is client-only.
+    if (typeof window === 'undefined') return []
     const raw = localStorage.getItem(STORAGE_KEY)
     return raw ? (JSON.parse(raw) as MatchResult[]) : []
   })
