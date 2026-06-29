@@ -12,6 +12,7 @@ import CardGrid from '../../components/CardGrid'
 import DeckPanel from '../../components/DeckPanel'
 import { useMatchHistory } from '../../hooks/useMatchHistory'
 import { useSavedDecks } from '../../hooks/useSavedDecks'
+import { useActiveDeck } from '../../hooks/useActiveDeck'
 import SaveDeckModal from '../../components/SaveDeckModal'
 import type { Card, CardColor, CardType, Strategy } from '../../types/card'
 
@@ -21,6 +22,7 @@ function BuildPageContent() {
   const topDecks = useMemo(() => getTopDecks(), [])
   const { history } = useMatchHistory()
   const { savedDecks, save } = useSavedDecks()
+  const { activeDeckId, setActiveDeckId } = useActiveDeck()
   const [saveModalOpen, setSaveModalOpen] = useState(false)
 
   // Deck state
@@ -71,6 +73,7 @@ function BuildPageContent() {
     setResourceDeck(found.resourceDeck)
     setSelectedColors(found.colors)
     setStrategy(found.strategy)
+    setActiveDeckId(found.id)   // M10: set as active deck for match recording
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Color toggle with 2-color limit
@@ -151,6 +154,18 @@ function BuildPageContent() {
         onAutoBuild={handleAutoBuild}
         disabled={!strategy || selectedColors.length === 0}
       />
+
+      {(() => {
+        const activeDeck = activeDeckId ? savedDecks.find(d => d.id === activeDeckId) : null
+        return activeDeck ? (
+          <div className="flex items-center gap-2 rounded-lg border border-accent-gold/30 bg-accent-gold/5 px-4 py-2 text-sm">
+            <span className="text-accent-gold text-xs">●</span>
+            <span className="text-white/60">使用中：</span>
+            <span className="font-medium text-white">{activeDeck.name}</span>
+            <span className="ml-auto text-white/30 text-xs">記錄比賽將自動關聯此牌組</span>
+          </div>
+        ) : null
+      })()}
 
       <div className="flex flex-col lg:flex-row gap-6 lg:h-[calc(100vh-8rem)] lg:overflow-hidden">
         {/* Left: card browser */}
