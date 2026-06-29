@@ -41,6 +41,13 @@ describe('addMatchResult', () => {
     expect(result[0]).toBe(entry)
     expect(result.length).toBe(fixture.length + 1)
   })
+
+  it('does not mutate the input array', () => {
+    const original = [...fixture]
+    addMatchResult(fixture, makeResult({ id: 'new' }))
+    expect(fixture).toHaveLength(original.length)
+    expect(fixture[0]).toBe(original[0])
+  })
 })
 
 describe('getWinRate', () => {
