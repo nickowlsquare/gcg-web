@@ -1,6 +1,7 @@
-import type { Card, CardColor, Strategy, TopDeck } from '../types/card'
+import type { Card, CardColor, Strategy, TopDeck, MatchResult } from '../types/card'
 import { scoreCard } from './strategy'
 import { buildTopDeckFrequency, cardFitsColors, greedyFill } from './autofill'
+import { buildLearnedTopDecks } from './history'
 
 // ─── Internal types ───────────────────────────────────────────────────────────
 
@@ -133,9 +134,12 @@ export function counterAutofill(
   topDecks: TopDeck[],
   targetDeck: TopDeck,
   colors: CardColor[],
-  strategy: Strategy
+  strategy: Strategy,
+  matchHistory?: MatchResult[]
 ): { mainDeck: Record<string, number>; resourceDeck: Record<string, number> } {
-  const topDeckFreq = buildTopDeckFrequency(topDecks, strategy, colors)
+  const learnedDecks = matchHistory ? buildLearnedTopDecks(matchHistory, topDecks) : []
+  const allDecks = [...topDecks, ...learnedDecks]
+  const topDeckFreq = buildTopDeckFrequency(allDecks, strategy, colors)
 
   // Pre-compute threat profile once (avoid re-analysis per card)
   const profile = analyzeTargetDeck(targetDeck, allCards)
