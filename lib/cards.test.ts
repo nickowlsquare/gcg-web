@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { filterCards, searchCards } from './cards'
+import { filterCards, searchCards, getAllCards } from './cards'
 import type { Card } from '../types/card'
 
 const mockCards: Card[] = [
@@ -130,5 +130,17 @@ describe('searchCards', () => {
   it('returns empty array when no cards match', () => {
     const result = searchCards(searchMockCards, 'Zeon')
     expect(result).toHaveLength(0)
+  })
+})
+
+describe('getAllCards data integrity', () => {
+  it('every card has non-empty id, name, type, and colors', () => {
+    const cards = getAllCards()
+    for (const card of cards) {
+      expect(card.id, `card missing id`).toBeTruthy()
+      expect(card.name, `card ${card.id} missing name`).toBeTruthy()
+      expect(card.type, `card ${card.id} missing type`).toBeTruthy()
+      expect(card.colors.length, `card ${card.id} has no colors`).toBeGreaterThan(0)
+    }
   })
 })

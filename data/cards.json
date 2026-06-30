@@ -454,7 +454,9 @@
     "id": "GD01-122",
     "name": "Universal Power Cell",
     "type": "resource",
-    "colors": [],
+    "colors": [
+      "blue"
+    ],
     "level": 1,
     "cost": 1,
     "rarity": "C",
