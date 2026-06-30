@@ -1,21 +1,22 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { getAllCards, filterCards } from '../../lib/cards'
+import { getAllCards, filterCards, searchCards } from '../../lib/cards'
 import FilterSidebar from '../../components/FilterSidebar'
 import CardGrid from '../../components/CardGrid'
-import LinkPanel from '../../components/LinkPanel'
+import CardDetailDrawer from '../../components/CardDetailDrawer'
 import type { Card, CardColor, CardType } from '../../types/card'
 
 export default function CardsPage() {
   const allCards = useMemo(() => getAllCards(), [])
   const [selectedColors, setSelectedColors] = useState<CardColor[]>([])
   const [selectedTypes, setSelectedTypes] = useState<CardType[]>([])
-  const [selectedLinkCard, setSelectedLinkCard] = useState<Card | null>(null)
+  const [selectedCard, setSelectedCard] = useState<Card | null>(null)
+  const [searchQuery, setSearchQuery] = useState('')
 
   const filteredCards = useMemo(
-    () => filterCards(allCards, selectedColors, selectedTypes),
-    [allCards, selectedColors, selectedTypes]
+    () => searchCards(filterCards(allCards, selectedColors, selectedTypes), searchQuery),
+    [allCards, selectedColors, selectedTypes, searchQuery]
   )
 
   function toggleColor(color: CardColor) {
@@ -31,8 +32,7 @@ export default function CardsPage() {
   }
 
   function handleCardClick(card: Card) {
-    if (card.type !== 'unit' || !card.linkRequirement) return
-    setSelectedLinkCard(prev => prev?.id === card.id ? null : card)
+    setSelectedCard(prev => prev?.id === card.id ? null : card)
   }
 
   return (
@@ -49,16 +49,14 @@ export default function CardsPage() {
       <div className="flex-1 min-w-0">
         <h1 className="mb-4 text-lg font-bold text-accent-gold tracking-wide">Card Library</h1>
 
-        {/* Link panel — shown when a linkable unit is selected */}
-        {selectedLinkCard && (
-          <div className="mb-4">
-            <LinkPanel
-              card={selectedLinkCard}
-              allCards={allCards}
-              onClose={() => setSelectedLinkCard(null)}
-            />
-          </div>
-        )}
+        {/* Search bar */}
+        <input
+          type="search"
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+          placeholder="搜尋卡名、Traits、Keywords…"
+          className="mb-4 w-full rounded-lg border border-white/10 bg-bg-surface px-4 py-2 text-sm text-white placeholder:text-white/30 focus:border-accent-gold/50 focus:outline-none"
+        />
 
         <CardGrid
           cards={filteredCards}
@@ -66,6 +64,13 @@ export default function CardsPage() {
           onCardClick={handleCardClick}
         />
       </div>
+
+      {/* Card detail drawer — always mounted, open/close via CSS transition */}
+      <CardDetailDrawer
+        card={selectedCard}
+        allCards={allCards}
+        onClose={() => setSelectedCard(null)}
+      />
     </div>
   )
 }
