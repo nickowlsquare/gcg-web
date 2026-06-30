@@ -209,6 +209,8 @@ function BuildPageContent() {
                 deckCounts={mainDeck}
                 onAdd={(card) => handleAdd(card, false)}
                 canAdd={canAddToMain}
+                allCards={allCards}
+                mainDeck={mainDeck}
               />
             </div>
           </div>
