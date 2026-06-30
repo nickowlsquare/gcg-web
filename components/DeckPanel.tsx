@@ -3,6 +3,7 @@ import { getDeckStats } from '../lib/deck'
 import { checkDeck } from '../lib/legality'
 import DeckStatBar from './DeckStatBar'
 import DeckList from './DeckList'
+import DeckCurveChart from './DeckCurveChart'
 
 interface DeckPanelProps {
   mainDeck: Record<string, number>
@@ -37,6 +38,9 @@ export default function DeckPanel({
 
       {/* Stats */}
       <DeckStatBar stats={stats} />
+
+      {/* Cost Curve / Level distribution */}
+      <DeckCurveChart mainDeck={mainDeck} allCards={allCards} />
 
       {/* Deck list */}
       <div className="flex-1 min-h-0 rounded-lg border border-white/10 bg-bg-surface p-3 flex flex-col overflow-hidden">
