@@ -22,10 +22,12 @@ export default function DeckCurveChart({ mainDeck, allCards }: Props) {
   return (
     <div className="rounded-lg border border-white/10 bg-bg-surface px-3 pt-2 pb-3">
       {/* Tab bar */}
-      <div className="flex border-b border-white/10 mb-3">
+      <div role="tablist" className="flex border-b border-white/10 mb-3">
         {(['cost', 'level'] as const).map(t => (
           <button
             key={t}
+            role="tab"
+            aria-selected={tab === t}
             onClick={() => setTab(t)}
             className={[
               'px-3 py-1 text-xs font-medium transition-colors',
@@ -50,6 +52,7 @@ export default function DeckCurveChart({ mainDeck, allCards }: Props) {
             {buckets.map((count, i) => (
               <div key={i} className="flex flex-col items-center gap-1 flex-1">
                 <div
+                  aria-label={`${labels[i]}: ${count}`}
                   className="w-full rounded-t-sm"
                   style={{
                     height: `${(count / maxBucket) * 100}%`,
