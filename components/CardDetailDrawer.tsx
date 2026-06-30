@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import type { Card } from '../types/card'
+import type { Card, CardType } from '../types/card'
 import LinkPanel from './LinkPanel'
 
 const CARD_TYPE_COLORS: Record<string, string> = {
@@ -100,7 +100,7 @@ export default function CardDetailDrawer({ card, allCards, onClose }: Props) {
                   Cost {card.cost}
                 </span>
               )}
-              {(['unit', 'base', 'ex_base', 'unit_token'] as string[]).includes(card.type) && card.ap != null && (
+              {(['unit', 'base', 'ex_base', 'unit_token'] as CardType[]).includes(card.type) && card.ap != null && (
                 <>
                   <span className="rounded border border-white/10 bg-bg-elevated px-2 py-1 text-xs text-white/70">
                     AP {card.ap}

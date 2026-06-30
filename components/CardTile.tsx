@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import type { Card } from '../types/card'
+import type { Card, CardType } from '../types/card'
 import { getLinkPilots } from '../lib/linkPairs'
 
 const CARD_TYPE_COLORS: Record<string, string> = {
@@ -174,7 +174,7 @@ export default function CardTile({
             </span>
           )}
 
-          {(['unit', 'base', 'ex_base', 'unit_token'] as string[]).includes(card.type) && card.ap != null && (
+          {(['unit', 'base', 'ex_base', 'unit_token'] as CardType[]).includes(card.type) && card.ap != null && (
             <span className="ml-auto text-[10px] text-white/70">
               {card.ap}/{card.hp}
             </span>

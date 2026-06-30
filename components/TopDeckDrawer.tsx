@@ -20,9 +20,9 @@ const TYPE_COLOR: Record<CardType, string> = {
   pilot:       'text-cardtype-pilot',
   command:     'text-cardtype-command',
   base:        'text-cardtype-base',
-  resource:    'text-white/40',
+  resource:    'text-cardtype-resource',
   ex_base:     'text-cardtype-base',
-  ex_resource: 'text-white/40',
+  ex_resource: 'text-cardtype-resource',
   unit_token:  'text-amber-400',
 }
 
