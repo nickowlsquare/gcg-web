@@ -3,7 +3,7 @@ import type { Card } from '../types/card'
 export interface CurveData {
   buckets: number[]  // length 5: index 0 = value 1, index 4 = value 5+
   labels: string[]   // always ['1', '2', '3', '4', '5+']
-  average: number    // weighted mean of included cards; 0 if no valid cards
+  average: number    // weighted mean of included cards; uses actual field value (not capped to 5); 0 if no valid cards
 }
 
 export function computeCurve(
