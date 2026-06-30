@@ -22,3 +22,13 @@ export function filterCards(
     return colorMatch && typeMatch
   })
 }
+
+export function searchCards(cards: Card[], query: string): Card[] {
+  const q = query.trim().toLowerCase()
+  if (!q) return cards
+  return cards.filter(card =>
+    card.name.toLowerCase().includes(q) ||
+    card.traits.some(t => t.toLowerCase().includes(q)) ||
+    card.keywords.some(k => k.toLowerCase().includes(q))
+  )
+}
