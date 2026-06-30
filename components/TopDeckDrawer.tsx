@@ -2,22 +2,28 @@
 
 import type { TopDeck, Card, CardType, Strategy } from '../types/card'
 
-const TYPE_ORDER: CardType[] = ['unit', 'pilot', 'command', 'base', 'resource']
+const TYPE_ORDER: CardType[] = ['unit', 'pilot', 'command', 'base', 'resource', 'ex_base', 'ex_resource', 'unit_token']
 
 const TYPE_LABEL: Record<CardType, string> = {
-  unit:     'Unit',
-  pilot:    'Pilot',
-  command:  'Command',
-  base:     'Base',
-  resource: 'Resource',
+  unit:        'Unit',
+  pilot:       'Pilot',
+  command:     'Command',
+  base:        'Base',
+  resource:    'Resource',
+  ex_base:     'EX Base',
+  ex_resource: 'EX Resource',
+  unit_token:  'Token',
 }
 
 const TYPE_COLOR: Record<CardType, string> = {
-  unit:     'text-cardtype-unit',
-  pilot:    'text-cardtype-pilot',
-  command:  'text-cardtype-command',
-  base:     'text-cardtype-base',
-  resource: 'text-white/40',
+  unit:        'text-cardtype-unit',
+  pilot:       'text-cardtype-pilot',
+  command:     'text-cardtype-command',
+  base:        'text-cardtype-base',
+  resource:    'text-white/40',
+  ex_base:     'text-cardtype-base',
+  ex_resource: 'text-white/40',
+  unit_token:  'text-amber-400',
 }
 
 const STRATEGY_LABEL: Record<Strategy, string> = {

@@ -38,6 +38,7 @@ export function getDeckStats(
   const cardMap = new Map(allCards.map(c => [c.id, c]))
   const typeCounts: Record<CardType, number> = {
     unit: 0, pilot: 0, command: 0, base: 0, resource: 0,
+    ex_base: 0, ex_resource: 0, unit_token: 0,
   }
   const costCurve: Record<number, number> = {}
 

@@ -11,10 +11,14 @@ const COLORS: { value: CardColor; label: string; dot: string }[] = [
 ]
 
 const TYPES: { value: CardType; label: string; textColor: string; borderColor: string }[] = [
-  { value: 'unit',    label: 'Unit',    textColor: 'text-cardtype-unit',    borderColor: 'border-cardtype-unit/40'    },
-  { value: 'pilot',   label: 'Pilot',   textColor: 'text-cardtype-pilot',   borderColor: 'border-cardtype-pilot/40'   },
-  { value: 'command', label: 'Command', textColor: 'text-cardtype-command', borderColor: 'border-cardtype-command/40' },
-  { value: 'base',    label: 'Base',    textColor: 'text-cardtype-base',    borderColor: 'border-cardtype-base/40'    },
+  { value: 'unit',       label: 'Unit',        textColor: 'text-cardtype-unit',     borderColor: 'border-cardtype-unit/40'     },
+  { value: 'pilot',      label: 'Pilot',       textColor: 'text-cardtype-pilot',    borderColor: 'border-cardtype-pilot/40'    },
+  { value: 'command',    label: 'Command',     textColor: 'text-cardtype-command',  borderColor: 'border-cardtype-command/40'  },
+  { value: 'base',       label: 'Base',        textColor: 'text-cardtype-base',     borderColor: 'border-cardtype-base/40'     },
+  { value: 'resource',   label: 'Resource',    textColor: 'text-cardtype-resource', borderColor: 'border-cardtype-resource/40' },
+  { value: 'ex_base',    label: 'EX Base',     textColor: 'text-cardtype-base',     borderColor: 'border-cardtype-base/40'     },
+  { value: 'ex_resource',label: 'EX Resource', textColor: 'text-cardtype-resource', borderColor: 'border-cardtype-resource/40' },
+  { value: 'unit_token', label: 'Token',       textColor: 'text-amber-400',         borderColor: 'border-amber-400/40'         },
 ]
 
 interface FilterSidebarProps {

@@ -1,6 +1,8 @@
 // types/card.ts
 export type CardColor = 'blue' | 'green' | 'red' | 'white' | 'purple'
-export type CardType = 'unit' | 'pilot' | 'command' | 'base' | 'resource'
+export type CardType =
+  | 'unit' | 'pilot' | 'command' | 'base' | 'resource'
+  | 'ex_base' | 'ex_resource' | 'unit_token'
 export type Strategy = 'aggro' | 'midrange' | 'control' | 'attrition'
 
 export interface Card {

@@ -5,11 +5,14 @@ import type { Card } from '../types/card'
 import LinkPanel from './LinkPanel'
 
 const CARD_TYPE_COLORS: Record<string, string> = {
-  unit:     'text-cardtype-unit    bg-cardtype-unit/10    border-cardtype-unit/30',
-  pilot:    'text-cardtype-pilot   bg-cardtype-pilot/10   border-cardtype-pilot/30',
-  command:  'text-cardtype-command bg-cardtype-command/10 border-cardtype-command/30',
-  base:     'text-cardtype-base    bg-cardtype-base/10    border-cardtype-base/30',
-  resource: 'text-cardtype-resource bg-cardtype-resource/10 border-cardtype-resource/30',
+  unit:        'text-cardtype-unit     bg-cardtype-unit/10     border-cardtype-unit/30',
+  pilot:       'text-cardtype-pilot    bg-cardtype-pilot/10    border-cardtype-pilot/30',
+  command:     'text-cardtype-command  bg-cardtype-command/10  border-cardtype-command/30',
+  base:        'text-cardtype-base     bg-cardtype-base/10     border-cardtype-base/30',
+  resource:    'text-cardtype-resource bg-cardtype-resource/10 border-cardtype-resource/30',
+  ex_base:     'text-cardtype-base     bg-cardtype-base/10     border-cardtype-base/30',
+  ex_resource: 'text-cardtype-resource bg-cardtype-resource/10 border-cardtype-resource/30',
+  unit_token:  'text-amber-400         bg-amber-400/10         border-amber-400/30',
 }
 
 interface Props {
@@ -97,7 +100,7 @@ export default function CardDetailDrawer({ card, allCards, onClose }: Props) {
                   Cost {card.cost}
                 </span>
               )}
-              {(card.type === 'unit' || card.type === 'base') && card.ap != null && (
+              {(['unit', 'base', 'ex_base', 'unit_token'] as string[]).includes(card.type) && card.ap != null && (
                 <>
                   <span className="rounded border border-white/10 bg-bg-elevated px-2 py-1 text-xs text-white/70">
                     AP {card.ap}
