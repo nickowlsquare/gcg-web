@@ -44,7 +44,7 @@ export default function LinkPanel({ card, allCards, mainDeck, onClose }: Props) 
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-medium text-white">{pilot.name}</span>
                   <span className="text-[9px] text-accent-gold">{pilot.rarity}</span>
-                  {pilot.apBoost != null && (
+                  {pilot.apBoost != null && pilot.hpBoost != null && (
                     <span className="text-[10px] text-cardtype-pilot">
                       AP+{pilot.apBoost} HP+{pilot.hpBoost}
                     </span>
