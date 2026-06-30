@@ -6,9 +6,20 @@ interface CardGridProps {
   deckCounts?: Record<string, number>
   onAdd?: (card: Card) => void
   canAdd?: (card: Card) => boolean
+  allCards?: Card[]
+  mainDeck?: Record<string, number>
+  onCardClick?: (card: Card) => void
 }
 
-export default function CardGrid({ cards, deckCounts, onAdd, canAdd }: CardGridProps) {
+export default function CardGrid({
+  cards,
+  deckCounts,
+  onAdd,
+  canAdd,
+  allCards,
+  mainDeck,
+  onCardClick,
+}: CardGridProps) {
   if (cards.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-24 text-center">
@@ -28,6 +39,9 @@ export default function CardGrid({ cards, deckCounts, onAdd, canAdd }: CardGridP
           deckCount={deckCounts?.[card.id] ?? 0}
           onAdd={onAdd ? () => onAdd(card) : undefined}
           canAdd={canAdd ? canAdd(card) : true}
+          allCards={allCards}
+          mainDeck={mainDeck}
+          onClick={onCardClick ? () => onCardClick(card) : undefined}
         />
       ))}
     </div>

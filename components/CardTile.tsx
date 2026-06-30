@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import type { Card } from '../types/card'
+import { getLinkPilots } from '../lib/linkPairs'
 
 const CARD_TYPE_COLORS: Record<string, string> = {
   unit:     'text-cardtype-unit    bg-cardtype-unit/10    border-cardtype-unit/30',
@@ -28,12 +29,32 @@ interface CardTileProps {
   deckCount?: number
   onAdd?: () => void
   canAdd?: boolean
+  allCards?: Card[]
+  mainDeck?: Record<string, number>
+  onClick?: () => void
 }
 
-export default function CardTile({ card, deckCount, onAdd, canAdd = true }: CardTileProps) {
+export default function CardTile({
+  card,
+  deckCount,
+  onAdd,
+  canAdd = true,
+  allCards,
+  mainDeck,
+  onClick,
+}: CardTileProps) {
   const [imgError, setImgError] = useState(false)
   const typeStyle = CARD_TYPE_COLORS[card.type] ?? CARD_TYPE_COLORS.resource
   const isLR = card.isLR === true
+
+  // Compute link info for hover overlay
+  const linkPilots = allCards && card.type === 'unit' && card.linkRequirement
+    ? getLinkPilots(card, allCards)
+    : null
+  const linkPilot = linkPilots?.[0] ?? null
+  const linkInDeck = linkPilot && mainDeck != null
+    ? (mainDeck[linkPilot.id] ?? 0) > 0
+    : null
 
   const handleAddClick = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -47,7 +68,9 @@ export default function CardTile({ card, deckCount, onAdd, canAdd = true }: Card
         bg-bg-surface transition-all duration-150
         hover:bg-bg-elevated hover:scale-[1.02]
         ${isLR ? 'border-accent-gold/50' : 'border-white/10'}
+        ${onClick ? 'cursor-pointer' : ''}
       `}
+      onClick={onClick}
     >
       {/* Deck count badge */}
       {deckCount && deckCount > 0 && (
@@ -83,9 +106,9 @@ export default function CardTile({ card, deckCount, onAdd, canAdd = true }: Card
           </div>
         )}
 
-        {/* Hover overlay with add button */}
+        {/* Hover overlay with add button + link row */}
         {onAdd && (
-          <div className="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-150 group-hover:opacity-100 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-150 group-hover:opacity-100 flex flex-col items-center justify-center gap-2 p-2">
             <button
               type="button"
               disabled={!canAdd}
@@ -102,6 +125,25 @@ export default function CardTile({ card, deckCount, onAdd, canAdd = true }: Card
             >
               +
             </button>
+
+            {/* Compact link row */}
+            {linkPilots !== null && (
+              <div className="text-[10px] text-center leading-tight">
+                <span className="text-white/50">Link: </span>
+                {linkPilot ? (
+                  <>
+                    <span className="text-white/90">{linkPilot.name}</span>
+                    {linkInDeck != null && (
+                      <span className={linkInDeck ? ' text-green-400' : ' text-white/30'}>
+                        {linkInDeck ? ' ✓' : ' ✗'}
+                      </span>
+                    )}
+                  </>
+                ) : (
+                  <span className="text-white/30">{card.linkRequirement} — 未有資料</span>
+                )}
+              </div>
+            )}
           </div>
         )}
       </div>
