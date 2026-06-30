@@ -20,7 +20,7 @@ export function computeCurve(
     const card = cardMap.get(cardId)
     if (!card) continue
     const value = card[field]
-    if (value === null || value === undefined) continue
+    if (value === null || value === undefined || value <= 0) continue
 
     const idx = Math.min(Math.max(value - 1, 0), 4)
     buckets[idx] += count

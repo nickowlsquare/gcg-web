@@ -59,4 +59,11 @@ describe('computeCurve', () => {
     expect(result.buckets).toEqual([0, 0, 0, 0, 0])
     expect(result.average).toBe(0)
   })
+
+  it('excludes cards with value <= 0 from buckets and average', () => {
+    const cards = [makeCard('A', 0, -1), makeCard('B', 2, 1)]
+    const result = computeCurve('cost', { A: 3, B: 2 }, cards)
+    expect(result.buckets).toEqual([0, 2, 0, 0, 0])
+    expect(result.average).toBe(2)
+  })
 })
